@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\GUIActions\DeleteAllAlertsAction.cs" />
+    <Compile Include="Actions\GUIActions\ExportStaticReportAction.cs" />
     <Compile Include="Actions\GUIActions\ExternalPluginAction.cs" />
     <Compile Include="Actions\GUIActions\MeddlingAction.cs" />
     <Compile Include="Actions\GUIActions\IgnoreServerAction.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Commands\Controls\EditPropertiesToolStripMenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Commands\ExportPooResourceStatisticlCommand.cs" />
     <Compile Include="Controls\AffinityPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>

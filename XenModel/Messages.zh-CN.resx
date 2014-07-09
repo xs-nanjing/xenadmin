@@ -11795,4 +11795,16 @@ XenServer 可以重新启动服务器并将其 CPU 降至主服务器的级别�
   <data name="YOU_ARE_HERE" xml:space="preserve">
     <value>您在此处</value>
   </data>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME" xml:space="preserve">
+    <value>导出 {0} 资源统计报表</value>
+  </data>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION" xml:space="preserve">
+    <value>导出 {0} 资源统计报表至文件 {1}</value>
+  </data>
+  <data name="ACTION_EXPORT_STATISTIC_FROM_X" xml:space="preserve">
+    <value>从 '{0}' 导出资源统计报表</value>
+  </data>
+  <data name="MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC" xml:space="preserve">
+    <value>资源统计报表</value>
+  </data>
 </root>

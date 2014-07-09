@@ -826,6 +826,33 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exporting {0} resource statistic report to file {1}.
+        /// </summary>
+        public static string ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporting {0} resource statistic report.
+        /// </summary>
+        public static string ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME {
+            get {
+                return ResourceManager.GetString("ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporting Statistic from &apos;{0}&apos;.
+        /// </summary>
+        public static string ACTION_EXPORT_STATISTIC_FROM_X {
+            get {
+                return ResourceManager.GetString("ACTION_EXPORT_STATISTIC_FROM_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exporting {0} to backup file.
         /// </summary>
         public static string ACTION_EXPORT_TASK_DESCRIPTION {
@@ -18492,6 +18519,15 @@ namespace XenAdmin {
         public static string MAINWINDOW_EXPIRE_MESSAGE_TOO_LATE {
             get {
                 return ResourceManager.GetString("MAINWINDOW_EXPIRE_MESSAGE_TOO_LATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resource Statistic Report.
+        /// </summary>
+        public static string MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC {
+            get {
+                return ResourceManager.GetString("MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC", resourceCulture);
             }
         }
         

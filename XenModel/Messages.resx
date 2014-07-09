@@ -12113,4 +12113,16 @@ You will need to navigate to the Console on each of the selected VMs to complete
   <data name="YOU_ARE_HERE" xml:space="preserve">
     <value>You are here</value>
   </data>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME" xml:space="preserve">
+    <value>Exporting {0} resource statistic report</value>
+  </data>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION" xml:space="preserve">
+    <value>Exporting {0} resource statistic report to file {1}</value>
+  </data>
+  <data name="ACTION_EXPORT_STATISTIC_FROM_X" xml:space="preserve">
+    <value>Exporting Statistic from '{0}'</value>
+  </data>
+  <data name="MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC" xml:space="preserve">
+    <value>Resource Statistic Report</value>
+  </data>
 </root>

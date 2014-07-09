@@ -412,5 +412,21 @@ namespace XenAdmin.XenSearch
         {
             public readonly ConcurrentDictionary<string, double> Values = new ConcurrentDictionary<string, double>();
         }
+
+        public void UpdateMetricsOnce()
+        {
+            Parallel.ForEach(_hosts.Keys.Where(h => h.Connection.IsConnected),
+                host =>
+                {
+                    HostMetric hm;
+                    //Intentionally using TryGetValue (instead of indexer's getter), because there is a slight chance 'host' is not in 'hosts.Keys' anymore.
+                    //This means that metrics of such 'host' can be ignored safely (no else implemented below).
+                    if (_hosts.TryGetValue(host, out hm))
+                    {
+                        var values = ValuesFor(host);
+                        DistributeValues(values, hm);
+                    }
+                });
+        }
     }
 }
