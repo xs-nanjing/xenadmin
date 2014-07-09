@@ -38,6 +38,7 @@ using XenAPI;
 using Microsoft.Reporting.WinForms;
 using System.Collections.Generic;
 using XenAdmin.XenSearch;
+using System.Linq;
 
 namespace XenAdmin.Actions
 {
@@ -47,9 +48,14 @@ namespace XenAdmin.Actions
         private readonly string _filename;
         private Exception _exception = null;
         private static MetricUpdater MetricUpdater;
-
-        /// <summary>
-        /// 
+        private List<HostInfo> m_Hosts;
+        List<SRInfo> m_SRs;
+        List<NetworkInfo> m_Networks;
+        List<VMInfo> m_VMs;
+        long itemCount = 0;
+        long itemIndex = 0;
+        long baseIndex = 90;
+        /// <summary> 
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="filename"></param>
@@ -456,18 +462,70 @@ namespace XenAdmin.Actions
             return String.Format(Messages.QUERY_PERCENT_OF_CPUS, ((sum * 100) / total).ToString("0."), total);
         }
 
-        private string vmIPAddresses(VM vm)
+        private ComparableList<ComparableAddress> IPAddressProperty(IXenObject o)
         {
-            VM_guest_metrics metrics = vm.Connection.Resolve(vm.guest_metrics);
-            if (metrics == null)
-                return Messages.HYPHEN;
+            ComparableList<ComparableAddress> addresses = new ComparableList<ComparableAddress>();
 
-            List<string> addresses = new List<string>(metrics.networks.Values);
+            if (o is VM)
+            {
+                VM vm = o as VM;
+                if (vm.not_a_real_vm)
+                    return null;
 
-            if (addresses.Count > 0)
-                return String.Join(", ", addresses.ToArray());
-            else
-                return Messages.HYPHEN;
+                VM_guest_metrics metrics = vm.Connection.Resolve(vm.guest_metrics);
+                if (metrics == null)
+                    return null;
+
+                List<VIF> vifs = vm.Connection.ResolveAll(vm.VIFs);
+
+                foreach (VIF vif in vifs)
+                {
+                    // PR-1373 - VM_guest_metrics.networks is a dictionary of IP addresses in the format:
+                    // [["0/ip", <IPv4 address>], ["0/ipv6/0", <IPv6 address>], ["0/ipv6/1", <IPv6 address>]]
+                    foreach (var network in metrics.networks.Where(n => n.Key.StartsWith(String.Format("{0}/ip", vif.device))))
+                    {
+                        ComparableAddress ipAddress;
+                        if (!ComparableAddress.TryParse(network.Value, false, true, out ipAddress))
+                            continue;
+
+                        addresses.Add(ipAddress);
+                    }
+                }
+            }
+            else if (o is Host)
+            {
+                Host host = o as Host;
+
+                foreach (PIF pif in host.Connection.ResolveAll(host.PIFs))
+                {
+                    ComparableAddress ipAddress;
+                    if (!ComparableAddress.TryParse(pif.IP, false, true, out ipAddress))
+                        continue;
+
+                    addresses.Add(ipAddress);
+                }
+            }
+            else if (o is SR)
+            {
+                SR sr = (SR)o;
+
+                string target = sr.Target;
+                if (!string.IsNullOrEmpty(target))
+                {
+                    ComparableAddress ipAddress;
+                    if (ComparableAddress.TryParse(target, false, true, out ipAddress))
+                        addresses.Add(ipAddress);
+                }
+            }
+            else if (o is StorageLinkServer)
+            {
+                StorageLinkServer storageLinkServer = (StorageLinkServer)o;
+                ComparableAddress ipAddress;
+                if (ComparableAddress.TryParse(storageLinkServer.FriendlyName, false, true, out ipAddress))
+                    addresses.Add(ipAddress);
+            }
+
+            return (addresses.Count == 0 ? null : addresses);   // CA-28300
         }
 
         private void ComposeParameters(ReportViewer viewer, IXenConnection connection)
@@ -640,7 +698,7 @@ namespace XenAdmin.Actions
                 }
 
                 VMInfo buf = new VMInfo(vm.Name, vm.uuid, vmCpuUsageString(vm), vmMemoryUsageString(vm),
-                    srInfo, Convert.ToString(vm.VIFs.Count), vmIPAddresses(vm), MacInfo, OSinfo, Convert.ToString(vm.power_state),
+                    srInfo, Convert.ToString(vm.VIFs.Count), Convert.ToString(IPAddressProperty(vm)), MacInfo, OSinfo, Convert.ToString(vm.power_state),
                     Convert.ToString(vm.RunningTime), host_name);
                 m_VMs.Insert(0, buf);
                 itemIndex++;
@@ -648,13 +706,10 @@ namespace XenAdmin.Actions
             }
         }
 
-        private List<HostInfo> m_Hosts;
-        List<SRInfo> m_SRs;
-        List<NetworkInfo> m_Networks;
-        List<VMInfo> m_VMs;
-        long itemCount = 0;
-        long itemIndex = 0;
-        long baseIndex = 90;
+        public override void RecomputeCanCancel()
+        {
+            CanCancel = true;
+        }
 
         private void DoExport()
         {
@@ -669,7 +724,7 @@ namespace XenAdmin.Actions
             // Setup the report viewer object and get the array of bytes
             ReportViewer viewer = new ReportViewer();
             viewer.ProcessingMode = ProcessingMode.Local;
-            viewer.LocalReport.ReportPath = "C:\\Users\\chengz\\Documents\\Visual Studio 2005\\Projects\\Report\\Report\\Report1.rdlc";
+            viewer.LocalReport.ReportPath = "resource_tatistic_report.rdlc";
             PercentComplete = 0;
             ComposeHostData();
             ComposeNetworkData();

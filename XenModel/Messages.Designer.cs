@@ -1717,6 +1717,33 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reclaiming freed space.
+        /// </summary>
+        public static string ACTION_SR_TRIM_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("ACTION_SR_TRIM_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completed.
+        /// </summary>
+        public static string ACTION_SR_TRIM_DONE {
+            get {
+                return ResourceManager.GetString("ACTION_SR_TRIM_DONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reclaiming freed space on SR &apos;{0}&apos;.
+        /// </summary>
+        public static string ACTION_SR_TRIM_TITLE {
+            get {
+                return ResourceManager.GetString("ACTION_SR_TRIM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade SR &apos;{0}&apos; on &apos;{1}&apos;.
         /// </summary>
         public static string ACTION_SR_UPGRADE {
@@ -4484,7 +4511,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can evacuate host check.
+        ///   Looks up a localized string similar to VM migration status.
         /// </summary>
         public static string ASSERT_CAN_EVACUATE_CHECK_DESCRIPTION {
             get {
@@ -6024,7 +6051,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking can evacuate host status.
+        ///   Looks up a localized string similar to Checking VM migration status.
         /// </summary>
         public static string CHECKING_CANEVACUATE_STATUS {
             get {
@@ -7643,7 +7670,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cps.
+        ///   Looks up a localized string similar to /sec.
         /// </summary>
         public static string COUNTS_PER_SEC_UNIT {
             get {
@@ -8001,6 +8028,51 @@ namespace XenAdmin {
         public static string CPU_SUB {
             get {
                 return ResourceManager.GetString("CPU_SUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 socket with 1 core per socket.
+        /// </summary>
+        public static string CPU_TOPOLOGY_STRING_1_SOCKET_1_CORE {
+            get {
+                return ResourceManager.GetString("CPU_TOPOLOGY_STRING_1_SOCKET_1_CORE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 socket with {0} cores per socket.
+        /// </summary>
+        public static string CPU_TOPOLOGY_STRING_1_SOCKET_N_CORE {
+            get {
+                return ResourceManager.GetString("CPU_TOPOLOGY_STRING_1_SOCKET_N_CORE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} cores per socket (Invalid configuration).
+        /// </summary>
+        public static string CPU_TOPOLOGY_STRING_INVALID_VALUE {
+            get {
+                return ResourceManager.GetString("CPU_TOPOLOGY_STRING_INVALID_VALUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} sockets with 1 core per socket.
+        /// </summary>
+        public static string CPU_TOPOLOGY_STRING_N_SOCKET_1_CORE {
+            get {
+                return ResourceManager.GetString("CPU_TOPOLOGY_STRING_N_SOCKET_1_CORE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} sockets with {1} cores per socket.
+        /// </summary>
+        public static string CPU_TOPOLOGY_STRING_N_SOCKET_N_CORE {
+            get {
+                return ResourceManager.GetString("CPU_TOPOLOGY_STRING_N_SOCKET_N_CORE", resourceCulture);
             }
         }
         
@@ -11367,15 +11439,6 @@ namespace XenAdmin {
         public static string DVD_DRIVE_LABEL_NUMBERED {
             get {
                 return ResourceManager.GetString("DVD_DRIVE_LABEL_NUMBERED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cross-Server Private Network.
-        /// </summary>
-        public static string DVSCS {
-            get {
-                return ResourceManager.GetString("DVSCS", resourceCulture);
             }
         }
         
@@ -20004,7 +20067,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable VDI live migration. This feature enables you to migrate multiple running VDIs between SRs in the same pool with no VM downtime. 
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable VDI live migration. This feature enables you to migrate multiple running VDIs between SRs in the same pool with no VM downtime. 
         ///
         ///To learn more about the XenServer Live VDI Migration feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -22156,6 +22219,15 @@ namespace XenAdmin {
         public static string NEWVMWIZARD_CPUMEMPAGE_TITLE {
             get {
                 return ResourceManager.GetString("NEWVMWIZARD_CPUMEMPAGE_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Topology.
+        /// </summary>
+        public static string NEWVMWIZARD_CPUMEMPAGE_TOPOLOGY {
+            get {
+                return ResourceManager.GetString("NEWVMWIZARD_CPUMEMPAGE_TOPOLOGY", resourceCulture);
             }
         }
         
@@ -26644,7 +26716,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos;: VM Protection Policies have been removed in XenServer 6.2.
+        ///   Looks up a localized string similar to &apos;{0}&apos;: VM Protection Policies were removed in XenServer 6.2.
         /// </summary>
         public static string RPU_WIZARD_VMPR_VMPP_DEPRECATION {
             get {
@@ -26653,7 +26725,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos;: The use of WSS servers has been removed in XenServer 6.2.
+        ///   Looks up a localized string similar to &apos;{0}&apos;: The use of WSS servers was removed in XenServer 6.2.
         /// </summary>
         public static string RPU_WIZARD_WSS_DEPRECATED {
             get {
@@ -27562,7 +27634,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value should be a number greater than 0.1.
+        ///   Looks up a localized string similar to Value should be a number greater than or equal to 1.0.
         /// </summary>
         public static string SHADOW_MEMORY_MULTIPLIER_VALUE {
             get {
@@ -31232,6 +31304,24 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to VM &apos;{0}&apos; has invalid vCPU settings..
+        /// </summary>
+        public static string UPGRADEWIZARD_PROBLEM_INVALID_VCPU_SETTINGS {
+            get {
+                return ResourceManager.GetString("UPGRADEWIZARD_PROBLEM_INVALID_VCPU_SETTINGS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fix vCPU configuration.
+        /// </summary>
+        public static string UPGRADEWIZARD_PROBLEM_INVALID_VCPU_SETTINGS_HELPMESSAGE {
+            get {
+                return ResourceManager.GetString("UPGRADEWIZARD_PROBLEM_INVALID_VCPU_SETTINGS_HELPMESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the servers you wish to upgrade..
         /// </summary>
         public static string UPGRADEWIZARD_SELECTSERVERS_TITLE {
@@ -31277,7 +31367,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Alerting and Reporting capabilities. Email based performance and error alerting will proactively notify administrators of error conditions or performance problems before they affect critical services.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Alerting and Reporting capabilities. Email based performance and error alerting will proactively notify administrators of error conditions or performance problems before they affect critical services.
         ///
         ///To learn more about the XenServer Alerting and Reporting feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31288,7 +31378,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable VM live migration. This feature enables you to migrate running VMs on shared or local storage between servers in the same pool or across pools with no VM downtime. 
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable VM live migration. This feature enables you to migrate running VMs on shared or local storage between servers in the same pool or across pools with no VM downtime. 
         ///
         ///To learn more about the XenServer Cross-Pool Migration feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31299,7 +31389,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Heterogeneous Pools. Heterogeneous Pools allows hosts with different CPUs to form a resource pool, and allows virtual machines to migrate between them.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Heterogeneous Pools. Heterogeneous Pools allows hosts with different CPUs to form a resource pool, and allows virtual machines to migrate between them.
         ///
         ///To learn more about the XenServer Heterogeneous Pools feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31310,7 +31400,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Dynamic Memory Control.  Dynamic Memory Control allows XenServer to adjust the memory of live virtual machines, and respond dynamically to changing demands on the host server.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Dynamic Memory Control.  Dynamic Memory Control allows XenServer to adjust the memory of live virtual machines, and respond dynamically to changing demands on the host server.
         ///
         ///To learn more about the XenServer Dynamic Memory Control feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31321,7 +31411,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Disaster Recovery. The Disaster Recovery feature allows you to recover your critical VMs and vApps at your DR site in the event of a disaster at your primary production site.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Disaster Recovery. The Disaster Recovery feature allows you to recover your critical VMs and vApps at your DR site in the event of a disaster at your primary production site.
         ///
         ///To learn more about the XenServer Disaster Recovery feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31332,7 +31422,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable StorageLink™ Technology. StorageLink allows XenServer to leverage all the power of your existing storage hardware and offload storage operations automatically. This allows for high performance and space efficient storage provisioning, cloning, and snapshot capabilities to be handled in hardware using your storage hardware&apos;s native features..
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable StorageLink™ Technology. StorageLink allows XenServer to leverage all the power of your existing storage hardware and offload storage operations automatically. This allows for high performance and space efficient storage provisioning, cloning, and snapshot capabilities to be handled in hardware using your storage hardware&apos;s native features..
         /// </summary>
         public static string UPSELL_BLURB_ENHANCEDSR {
             get {
@@ -31341,7 +31431,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable GPU pass-through. The GPU pass-through feature allows you to assign a dedicated graphics processing unit to a VM for higher graphics performance.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable GPU pass-through. The GPU pass-through feature allows you to assign a dedicated graphics processing unit to a VM for higher graphics performance.
         ///
         ///To learn more about the XenServer GPU pass-through feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31352,7 +31442,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable High Availability. High Availability allows virtual machines to be automatically restarted in the event of an underlying hardware failure or individual VM failure. If the server fails the VMs will be intelligently restarted on other virtualized servers in the resource pool.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable High Availability. High Availability allows virtual machines to be automatically restarted in the event of an underlying hardware failure or individual VM failure. If the server fails the VMs will be intelligently restarted on other virtualized servers in the resource pool.
         ///
         ///To learn more about the XenServer High Availability feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31363,7 +31453,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Performance Reporting capabilities. Performance Reporting provides guidance on overall environment performance trends and enables you to accurately plan capacity as business needs change.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Performance Reporting capabilities. Performance Reporting provides guidance on overall environment performance trends and enables you to accurately plan capacity as business needs change.
         ///
         ///To learn more about the XenServer Performance Reporting capabilities feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31374,7 +31464,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Role Based Access Control. Using the RBAC feature, you will be able to control access to vital components in your XenServer resource pools, with full audit logging capabilities and seamless integration with your current Active Directory setup.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Role Based Access Control. Using the RBAC feature, you will be able to control access to vital components in your XenServer resource pools, with full audit logging capabilities and seamless integration with your current Active Directory setup.
         ///
         ///To learn more about the XenServer Role Based Access Control feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31385,7 +31475,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable vApps. The vApps feature allows you to place your VMs into groups, allowing them to be started or stopped as a unit, and also allowing them to be easily recovered at your DR site in the event of a disaster at your primary production site.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable vApps. The vApps feature allows you to place your VMs into groups, allowing them to be started or stopped as a unit, and also allowing them to be easily recovered at your DR site in the event of a disaster at your primary production site.
         ///
         ///To learn more about the vApps feature of XenServer or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31396,7 +31486,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable VM Protection and Recovery. VM Protection and Recovery allows you to protect your critical VMs by scheduling automatic snapshots, and optionally, archiving those snapshots to a CIFS or NFS share.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable VM Protection and Recovery. VM Protection and Recovery allows you to protect your critical VMs by scheduling automatic snapshots, and optionally, archiving those snapshots to a CIFS or NFS share.
         ///
         ///To learn more about the XenServer VM Protection and Recovery feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31407,7 +31497,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade XenServer to enable Dynamic Workload Balancing. Dynamic Workload Balancing continually profiles your virtual machines’ and XenServer hosts’ performance and will intelligently rebalance and optimally place new workloads to ensure the best use of physical server resources in your resource pool.
+        ///   Looks up a localized string similar to Upgrade your XenServer license to enable Dynamic Workload Balancing. Dynamic Workload Balancing continually profiles your virtual machines’ and XenServer hosts’ performance and will intelligently rebalance and optimally place new workloads to ensure the best use of physical server resources in your resource pool.
         ///
         ///To learn more about the XenServer Dynamic Workload Balancing feature or to start a XenServer trial, click the button below..
         /// </summary>
@@ -31751,7 +31841,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The number of VCPUs can only be changed when the VM is shut down.
+        ///   Looks up a localized string similar to The VCPUs can only be changed when the VM is shut down.
         /// </summary>
         public static string VCPU_ONLY_WHEN_HALTED {
             get {
@@ -34827,7 +34917,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} feature is deprecated in {1} and may be unavailable in future versions.
+        ///   Looks up a localized string similar to The {0} feature was deprecated in {1} and may be unavailable in future versions.
         /// </summary>
         public static string X_IS_DEPRECATED_IN_X {
             get {
@@ -34836,7 +34926,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} feature is not available in {1}.
+        ///   Looks up a localized string similar to The {0} feature is not available in {1} and later versions.
         /// </summary>
         public static string X_IS_REMOVED_IN_X {
             get {
@@ -34971,6 +35061,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to XenServer 6.5.
+        /// </summary>
+        public static string XENSERVER_6_5 {
+            get {
+                return ResourceManager.GetString("XENSERVER_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XenServer Templates.
         /// </summary>
         public static string XENSERVER_TEMPLATES {
@@ -34980,7 +35079,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to XenServer Upgrade Required.
+        ///   Looks up a localized string similar to License Upgrade Required.
         /// </summary>
         public static string XENSERVER_UPGRADE_REQUIRED {
             get {
