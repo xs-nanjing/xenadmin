@@ -112,21 +112,166 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="labelAuditTrail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAuditTrail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelAuditTrail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelAuditTrail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 522</value>
+  </data>
+  <data name="labelAuditTrail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 0, 4, 4</value>
+  </data>
+  <data name="labelAuditTrail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 17</value>
+  </data>
+  <data name="labelAuditTrail.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="labelAuditTrail.Text" xml:space="preserve">
+    <value>Select audit trail log granularity. WARN: Select Maximum will consume more disk spaces of WLB Server.</value>
+  </data>
+  <data name="&gt;&gt;labelAuditTrail.Name" xml:space="preserve">
+    <value>labelAuditTrail</value>
+  </data>
+  <data name="&gt;&gt;labelAuditTrail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAuditTrail.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelAuditTrail.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="comboBoxPoolAuditTrailLevel.Items" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="comboBoxPoolAuditTrailLevel.Items1" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="comboBoxPoolAuditTrailLevel.Items2" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="comboBoxPoolAuditTrailLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 3</value>
+  </data>
+  <data name="comboBoxPoolAuditTrailLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
+  </data>
+  <data name="comboBoxPoolAuditTrailLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPoolAuditTrailLevel.Name" xml:space="preserve">
+    <value>comboBoxPoolAuditTrailLevel</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPoolAuditTrailLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPoolAuditTrailLevel.Parent" xml:space="preserve">
+    <value>auditTrailPanel</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPoolAuditTrailLevel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.LabelHorizontalAlignment" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.LabelPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.LabelText" xml:space="preserve">
+    <value>&amp;Pool audit trail granularity</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.LinePadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 505</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 14</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="sectionHeaderLabelAudtTrail.UseMnemonic" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelAudtTrail.Name" xml:space="preserve">
+    <value>sectionHeaderLabelAudtTrail</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelAudtTrail.Type" xml:space="preserve">
+    <value>XenAdmin.Controls.SectionHeaderLabel, XenCenterMain, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelAudtTrail.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelAudtTrail.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 479</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 10</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>638, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Specify advance settings for pool audit trail</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="sectionHeaderLabelRepSub.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -134,7 +279,6 @@
   <data name="sectionHeaderLabelRepSub.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="textBoxSMTPServer.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 3</value>
   </data>
@@ -148,7 +292,7 @@
     <value>textBoxSMTPServer</value>
   </data>
   <data name="&gt;&gt;textBoxSMTPServer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBoxSMTPServer.Parent" xml:space="preserve">
     <value>panelRepSub</value>
@@ -174,6 +318,9 @@
   <data name="sectionHeaderLabelRepSub.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 3</value>
   </data>
+  <data name="sectionHeaderLabelRepSub.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
   <data name="sectionHeaderLabelRepSub.Size" type="System.Drawing.Size, System.Drawing">
     <value>632, 14</value>
   </data>
@@ -193,7 +340,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;sectionHeaderLabelRepSub.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="sectionHeaderLabelHistData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -214,7 +361,7 @@
     <value>numericUpDownGroomingPeriod</value>
   </data>
   <data name="&gt;&gt;numericUpDownGroomingPeriod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownGroomingPeriod.Parent" xml:space="preserve">
     <value>panelHistData</value>
@@ -240,6 +387,9 @@
   <data name="sectionHeaderLabelHistData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 3</value>
   </data>
+  <data name="sectionHeaderLabelHistData.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
   <data name="sectionHeaderLabelHistData.Size" type="System.Drawing.Size, System.Drawing">
     <value>632, 14</value>
   </data>
@@ -259,7 +409,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;sectionHeaderLabelHistData.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="sectionHeaderLabelOptAgr.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,7 +439,7 @@
     <value>comboBoxAutoBalanceAggressiveness</value>
   </data>
   <data name="&gt;&gt;comboBoxAutoBalanceAggressiveness.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBoxAutoBalanceAggressiveness.Parent" xml:space="preserve">
     <value>panelOptAgr</value>
@@ -315,6 +465,9 @@
   <data name="sectionHeaderLabelOptAgr.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 3</value>
   </data>
+  <data name="sectionHeaderLabelOptAgr.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
   <data name="sectionHeaderLabelOptAgr.Size" type="System.Drawing.Size, System.Drawing">
     <value>632, 14</value>
   </data>
@@ -334,7 +487,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;sectionHeaderLabelOptAgr.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="labelOptAgr.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -364,13 +517,13 @@
     <value>labelOptAgr</value>
   </data>
   <data name="&gt;&gt;labelOptAgr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelOptAgr.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelOptAgr.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="labelHistData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -383,6 +536,9 @@
   </data>
   <data name="labelHistData.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 356</value>
+  </data>
+  <data name="labelHistData.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>533, 45</value>
   </data>
   <data name="labelHistData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 0, 4, 4</value>
@@ -400,13 +556,13 @@
     <value>labelHistData</value>
   </data>
   <data name="&gt;&gt;labelHistData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelHistData.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelHistData.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="sectionHeaderLabelRecSev.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -439,7 +595,7 @@
     <value>comboBoxOptimizationSeverity</value>
   </data>
   <data name="&gt;&gt;comboBoxOptimizationSeverity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBoxOptimizationSeverity.Parent" xml:space="preserve">
     <value>panelRecSev</value>
@@ -465,6 +621,9 @@
   <data name="sectionHeaderLabelRecSev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 3</value>
   </data>
+  <data name="sectionHeaderLabelRecSev.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
   <data name="sectionHeaderLabelRecSev.Size" type="System.Drawing.Size, System.Drawing">
     <value>632, 14</value>
   </data>
@@ -484,7 +643,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;sectionHeaderLabelRecSev.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="labelRepSub.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -514,13 +673,13 @@
     <value>labelRepSub</value>
   </data>
   <data name="&gt;&gt;labelRepSub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRepSub.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelRepSub.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="sectionHeaderLabelVmMigInt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -538,7 +697,7 @@
     <value>numericUpDownRelocationInterval</value>
   </data>
   <data name="&gt;&gt;numericUpDownRelocationInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownRelocationInterval.Parent" xml:space="preserve">
     <value>panelVmMigInt</value>
@@ -561,6 +720,9 @@
   <data name="sectionHeaderLabelVmMigInt.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 26</value>
   </data>
+  <data name="sectionHeaderLabelVmMigInt.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
   <data name="sectionHeaderLabelVmMigInt.Size" type="System.Drawing.Size, System.Drawing">
     <value>632, 16</value>
   </data>
@@ -580,7 +742,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;sectionHeaderLabelVmMigInt.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="labelVmMigInt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -610,13 +772,13 @@
     <value>labelVmMigInt</value>
   </data>
   <data name="&gt;&gt;labelVmMigInt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelVmMigInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelVmMigInt.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -646,13 +808,13 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="labelRecSev.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -682,19 +844,508 @@
     <value>labelRecSev</value>
   </data>
   <data name="&gt;&gt;labelRecSev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRecSev.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelRecSev.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="panelVmMigInt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="panelVmMigInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationUnit.Name" xml:space="preserve">
+    <value>labelRelocationUnit</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationUnit.Parent" xml:space="preserve">
+    <value>panelVmMigInt</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationUnit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationDefault.Name" xml:space="preserve">
+    <value>labelRelocationDefault</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationDefault.Parent" xml:space="preserve">
+    <value>panelVmMigInt</value>
+  </data>
+  <data name="&gt;&gt;labelRelocationDefault.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelVmMigInt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelVmMigInt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 65</value>
+  </data>
+  <data name="panelVmMigInt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="panelVmMigInt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 26</value>
+  </data>
+  <data name="panelVmMigInt.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;panelVmMigInt.Name" xml:space="preserve">
+    <value>panelVmMigInt</value>
+  </data>
+  <data name="&gt;&gt;panelVmMigInt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelVmMigInt.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panelVmMigInt.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="numericUpDownPollInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 3</value>
+  </data>
+  <data name="numericUpDownPollInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="numericUpDownPollInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPollInterval.Name" xml:space="preserve">
+    <value>numericUpDownPollInterval</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPollInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPollInterval.Parent" xml:space="preserve">
+    <value>panelRecCnt</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPollInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.LabelHorizontalAlignment" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.LabelPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.LabelText" xml:space="preserve">
+    <value>Recomm&amp;endation Count</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.LinePadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 102</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 8, 3, 3</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 14</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="sectionHeaderLabelRecCnt.UseMnemonic" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelRecCnt.Name" xml:space="preserve">
+    <value>sectionHeaderLabelRecCnt</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelRecCnt.Type" xml:space="preserve">
+    <value>XenAdmin.Controls.SectionHeaderLabel, XenCenterMain, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelRecCnt.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;sectionHeaderLabelRecCnt.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="labelRecCnt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelRecCnt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelRecCnt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelRecCnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 119</value>
+  </data>
+  <data name="labelRecCnt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 0, 4, 4</value>
+  </data>
+  <data name="labelRecCnt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 17</value>
+  </data>
+  <data name="labelRecCnt.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="labelRecCnt.Text" xml:space="preserve">
+    <value>Select how many times an optimization recommendation must be made before it is automatically applied.</value>
+  </data>
+  <data name="&gt;&gt;labelRecCnt.Name" xml:space="preserve">
+    <value>labelRecCnt</value>
+  </data>
+  <data name="&gt;&gt;labelRecCnt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRecCnt.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelRecCnt.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="panelRecCnt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panelRecCnt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalUnit.Name" xml:space="preserve">
+    <value>labelRecommendationIntervalUnit</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalUnit.Parent" xml:space="preserve">
+    <value>panelRecCnt</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalUnit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalDefault.Name" xml:space="preserve">
+    <value>labelRecommendationIntervalDefault</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalDefault.Parent" xml:space="preserve">
+    <value>panelRecCnt</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationIntervalDefault.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelRecCnt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelRecCnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 139</value>
+  </data>
+  <data name="panelRecCnt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="panelRecCnt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 26</value>
+  </data>
+  <data name="panelRecCnt.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;panelRecCnt.Name" xml:space="preserve">
+    <value>panelRecCnt</value>
+  </data>
+  <data name="&gt;&gt;panelRecCnt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelRecCnt.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panelRecCnt.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="panelRecSev.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panelRecSev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationSeverityDefault.Name" xml:space="preserve">
+    <value>labelRecommendationSeverityDefault</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationSeverityDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationSeverityDefault.Parent" xml:space="preserve">
+    <value>panelRecSev</value>
+  </data>
+  <data name="&gt;&gt;labelRecommendationSeverityDefault.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelRecSev.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelRecSev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 226</value>
+  </data>
+  <data name="panelRecSev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="panelRecSev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 27</value>
+  </data>
+  <data name="panelRecSev.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;panelRecSev.Name" xml:space="preserve">
+    <value>panelRecSev</value>
+  </data>
+  <data name="&gt;&gt;panelRecSev.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelRecSev.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panelRecSev.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="panelOptAgr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.Name" xml:space="preserve">
+    <value>labelAutoBalanceAggressivenessDefault</value>
+  </data>
+  <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.Parent" xml:space="preserve">
+    <value>panelOptAgr</value>
+  </data>
+  <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelOptAgr.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelOptAgr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 301</value>
+  </data>
+  <data name="panelOptAgr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="panelOptAgr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 27</value>
+  </data>
+  <data name="panelOptAgr.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;panelOptAgr.Name" xml:space="preserve">
+    <value>panelOptAgr</value>
+  </data>
+  <data name="&gt;&gt;panelOptAgr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelOptAgr.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panelOptAgr.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="panelHistData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panelHistData.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingUnits.Name" xml:space="preserve">
+    <value>labelGroomingUnits</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingUnits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingUnits.Parent" xml:space="preserve">
+    <value>panelHistData</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingUnits.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingDefault.Name" xml:space="preserve">
+    <value>labelGroomingDefault</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingDefault.Parent" xml:space="preserve">
+    <value>panelHistData</value>
+  </data>
+  <data name="&gt;&gt;labelGroomingDefault.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelHistData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelHistData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 376</value>
+  </data>
+  <data name="panelHistData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="panelHistData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 26</value>
+  </data>
+  <data name="panelHistData.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;panelHistData.Name" xml:space="preserve">
+    <value>panelHistData</value>
+  </data>
+  <data name="&gt;&gt;panelHistData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelHistData.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panelHistData.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="panelRepSub.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelSMTPServer.Name" xml:space="preserve">
+    <value>labelSMTPServer</value>
+  </data>
+  <data name="&gt;&gt;labelSMTPServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSMTPServer.Parent" xml:space="preserve">
+    <value>panelRepSub</value>
+  </data>
+  <data name="&gt;&gt;labelSMTPServer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelSmtpPort.Name" xml:space="preserve">
+    <value>LabelSmtpPort</value>
+  </data>
+  <data name="&gt;&gt;LabelSmtpPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSmtpPort.Parent" xml:space="preserve">
+    <value>panelRepSub</value>
+  </data>
+  <data name="&gt;&gt;LabelSmtpPort.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSMTPServerPort.Name" xml:space="preserve">
+    <value>TextBoxSMTPServerPort</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSMTPServerPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSMTPServerPort.Parent" xml:space="preserve">
+    <value>panelRepSub</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSMTPServerPort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panelRepSub.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelRepSub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 450</value>
+  </data>
+  <data name="panelRepSub.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="panelRepSub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 26</value>
+  </data>
+  <data name="panelRepSub.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;panelRepSub.Name" xml:space="preserve">
+    <value>panelRepSub</value>
+  </data>
+  <data name="&gt;&gt;panelRepSub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelRepSub.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panelRepSub.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;poolAuditTrailNote.Name" xml:space="preserve">
+    <value>poolAuditTrailNote</value>
+  </data>
+  <data name="&gt;&gt;poolAuditTrailNote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;poolAuditTrailNote.Parent" xml:space="preserve">
+    <value>auditTrailPanel</value>
+  </data>
+  <data name="&gt;&gt;poolAuditTrailNote.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="auditTrailPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 542</value>
+  </data>
+  <data name="auditTrailPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="auditTrailPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 23</value>
+  </data>
+  <data name="auditTrailPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;auditTrailPanel.Name" xml:space="preserve">
+    <value>auditTrailPanel</value>
+  </data>
+  <data name="&gt;&gt;auditTrailPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;auditTrailPanel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;auditTrailPanel.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>638, 571</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelAuditTrail" Row="21" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelAudtTrail" Row="20" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="19" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelRepSub" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelHistData" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelOptAgr" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelOptAgr" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelHistData" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelRecSev" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelRepSub" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelVmMigInt" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelVmMigInt" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelRecSev" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelVmMigInt" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelRecCnt" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelRecCnt" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelRecCnt" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelRecSev" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelOptAgr" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelHistData" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelRepSub" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="auditTrailPanel" Row="22" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="labelRelocationUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -724,7 +1375,7 @@
     <value>labelRelocationUnit</value>
   </data>
   <data name="&gt;&gt;labelRelocationUnit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRelocationUnit.Parent" xml:space="preserve">
     <value>panelVmMigInt</value>
@@ -760,148 +1411,13 @@
     <value>labelRelocationDefault</value>
   </data>
   <data name="&gt;&gt;labelRelocationDefault.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRelocationDefault.Parent" xml:space="preserve">
     <value>panelVmMigInt</value>
   </data>
   <data name="&gt;&gt;labelRelocationDefault.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="panelVmMigInt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelVmMigInt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 65</value>
-  </data>
-  <data name="panelVmMigInt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>45, 0, 0, 0</value>
-  </data>
-  <data name="panelVmMigInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 26</value>
-  </data>
-  <data name="panelVmMigInt.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;panelVmMigInt.Name" xml:space="preserve">
-    <value>panelVmMigInt</value>
-  </data>
-  <data name="&gt;&gt;panelVmMigInt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelVmMigInt.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;panelVmMigInt.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="numericUpDownPollInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 3</value>
-  </data>
-  <data name="numericUpDownPollInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
-  </data>
-  <data name="numericUpDownPollInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownPollInterval.Name" xml:space="preserve">
-    <value>numericUpDownPollInterval</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownPollInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownPollInterval.Parent" xml:space="preserve">
-    <value>panelRecCnt</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownPollInterval.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.LabelHorizontalAlignment" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.LabelPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.LabelText" xml:space="preserve">
-    <value>Recomm&amp;endation Count</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.LinePadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 102</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 3</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 14</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="sectionHeaderLabelRecCnt.UseMnemonic" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;sectionHeaderLabelRecCnt.Name" xml:space="preserve">
-    <value>sectionHeaderLabelRecCnt</value>
-  </data>
-  <data name="&gt;&gt;sectionHeaderLabelRecCnt.Type" xml:space="preserve">
-    <value>XenAdmin.Controls.SectionHeaderLabel, XenCenterMain, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;sectionHeaderLabelRecCnt.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;sectionHeaderLabelRecCnt.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="labelRecCnt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelRecCnt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelRecCnt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelRecCnt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 119</value>
-  </data>
-  <data name="labelRecCnt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>15, 0, 4, 4</value>
-  </data>
-  <data name="labelRecCnt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 17</value>
-  </data>
-  <data name="labelRecCnt.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="labelRecCnt.Text" xml:space="preserve">
-    <value>Select how many times an optimization recommendation must be made before it is automatically applied.</value>
-  </data>
-  <data name="&gt;&gt;labelRecCnt.Name" xml:space="preserve">
-    <value>labelRecCnt</value>
-  </data>
-  <data name="&gt;&gt;labelRecCnt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelRecCnt.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelRecCnt.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="panelRecCnt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panelRecCnt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
   </data>
   <data name="labelRecommendationIntervalUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -931,7 +1447,7 @@
     <value>labelRecommendationIntervalUnit</value>
   </data>
   <data name="&gt;&gt;labelRecommendationIntervalUnit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRecommendationIntervalUnit.Parent" xml:space="preserve">
     <value>panelRecCnt</value>
@@ -967,46 +1483,13 @@
     <value>labelRecommendationIntervalDefault</value>
   </data>
   <data name="&gt;&gt;labelRecommendationIntervalDefault.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRecommendationIntervalDefault.Parent" xml:space="preserve">
     <value>panelRecCnt</value>
   </data>
   <data name="&gt;&gt;labelRecommendationIntervalDefault.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="panelRecCnt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelRecCnt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 139</value>
-  </data>
-  <data name="panelRecCnt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>45, 0, 0, 0</value>
-  </data>
-  <data name="panelRecCnt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 26</value>
-  </data>
-  <data name="panelRecCnt.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;panelRecCnt.Name" xml:space="preserve">
-    <value>panelRecCnt</value>
-  </data>
-  <data name="&gt;&gt;panelRecCnt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelRecCnt.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;panelRecCnt.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="panelRecSev.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panelRecSev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
   </data>
   <data name="labelRecommendationSeverityDefault.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1036,43 +1519,13 @@
     <value>labelRecommendationSeverityDefault</value>
   </data>
   <data name="&gt;&gt;labelRecommendationSeverityDefault.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRecommendationSeverityDefault.Parent" xml:space="preserve">
     <value>panelRecSev</value>
   </data>
   <data name="&gt;&gt;labelRecommendationSeverityDefault.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="panelRecSev.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelRecSev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 226</value>
-  </data>
-  <data name="panelRecSev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>45, 0, 0, 0</value>
-  </data>
-  <data name="panelRecSev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 27</value>
-  </data>
-  <data name="panelRecSev.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;panelRecSev.Name" xml:space="preserve">
-    <value>panelRecSev</value>
-  </data>
-  <data name="&gt;&gt;panelRecSev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelRecSev.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;panelRecSev.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="panelOptAgr.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelAutoBalanceAggressivenessDefault.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1099,46 +1552,13 @@
     <value>labelAutoBalanceAggressivenessDefault</value>
   </data>
   <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.Parent" xml:space="preserve">
     <value>panelOptAgr</value>
   </data>
   <data name="&gt;&gt;labelAutoBalanceAggressivenessDefault.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="panelOptAgr.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelOptAgr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 301</value>
-  </data>
-  <data name="panelOptAgr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>45, 0, 0, 0</value>
-  </data>
-  <data name="panelOptAgr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 27</value>
-  </data>
-  <data name="panelOptAgr.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;panelOptAgr.Name" xml:space="preserve">
-    <value>panelOptAgr</value>
-  </data>
-  <data name="&gt;&gt;panelOptAgr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelOptAgr.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;panelOptAgr.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="panelHistData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panelHistData.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
   </data>
   <data name="labelGroomingUnits.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1165,7 +1585,7 @@
     <value>labelGroomingUnits</value>
   </data>
   <data name="&gt;&gt;labelGroomingUnits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelGroomingUnits.Parent" xml:space="preserve">
     <value>panelHistData</value>
@@ -1198,43 +1618,13 @@
     <value>labelGroomingDefault</value>
   </data>
   <data name="&gt;&gt;labelGroomingDefault.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelGroomingDefault.Parent" xml:space="preserve">
     <value>panelHistData</value>
   </data>
   <data name="&gt;&gt;labelGroomingDefault.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="panelHistData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelHistData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 376</value>
-  </data>
-  <data name="panelHistData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>45, 0, 0, 0</value>
-  </data>
-  <data name="panelHistData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 26</value>
-  </data>
-  <data name="panelHistData.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;panelHistData.Name" xml:space="preserve">
-    <value>panelHistData</value>
-  </data>
-  <data name="&gt;&gt;panelHistData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelHistData.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;panelHistData.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="panelRepSub.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelSMTPServer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1261,7 +1651,7 @@
     <value>labelSMTPServer</value>
   </data>
   <data name="&gt;&gt;labelSMTPServer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelSMTPServer.Parent" xml:space="preserve">
     <value>panelRepSub</value>
@@ -1306,7 +1696,7 @@
     <value>LabelSmtpPort</value>
   </data>
   <data name="&gt;&gt;LabelSmtpPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelSmtpPort.Parent" xml:space="preserve">
     <value>panelRepSub</value>
@@ -1330,7 +1720,7 @@
     <value>TextBoxSMTPServerPort</value>
   </data>
   <data name="&gt;&gt;TextBoxSMTPServerPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TextBoxSMTPServerPort.Parent" xml:space="preserve">
     <value>panelRepSub</value>
@@ -1338,76 +1728,52 @@
   <data name="&gt;&gt;TextBoxSMTPServerPort.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panelRepSub.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="poolAuditTrailNote.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="panelRepSub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 450</value>
+  <data name="poolAuditTrailNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="panelRepSub.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>45, 0, 0, 0</value>
+  <data name="poolAuditTrailNote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 0</value>
   </data>
-  <data name="panelRepSub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 107</value>
+  <data name="poolAuditTrailNote.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 5, 0, 0</value>
   </data>
-  <data name="panelRepSub.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+  <data name="poolAuditTrailNote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 18</value>
   </data>
-  <data name="&gt;&gt;panelRepSub.Name" xml:space="preserve">
-    <value>panelRepSub</value>
+  <data name="poolAuditTrailNote.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="&gt;&gt;panelRepSub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="poolAuditTrailNote.Text" xml:space="preserve">
+    <value>(Default is normal)</value>
   </data>
-  <data name="&gt;&gt;panelRepSub.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="&gt;&gt;poolAuditTrailNote.Name" xml:space="preserve">
+    <value>poolAuditTrailNote</value>
   </data>
-  <data name="&gt;&gt;panelRepSub.ZOrder" xml:space="preserve">
-    <value>18</value>
+  <data name="&gt;&gt;poolAuditTrailNote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;poolAuditTrailNote.Parent" xml:space="preserve">
+    <value>auditTrailPanel</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;poolAuditTrailNote.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>638, 560</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="sectionHeaderLabelRepSub" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelHistData" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelOptAgr" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelOptAgr" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelHistData" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelRecSev" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelRepSub" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelVmMigInt" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelVmMigInt" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelRecSev" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelVmMigInt" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sectionHeaderLabelRecCnt" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelRecCnt" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelRecCnt" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelRecSev" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelOptAgr" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelHistData" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelRepSub" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>638, 560</value>
+    <value>638, 571</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>WlbAdvancedSettingsPage</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
