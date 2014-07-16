@@ -52,6 +52,7 @@ namespace XenAdmin.Actions
         List<SRInfo> m_SRs;
         List<NetworkInfo> m_Networks;
         List<VMInfo> m_VMs;
+        List<PGPUInfo> m_PGUPs;
         long itemCount = 0;
         long itemIndex = 0;
         long baseIndex = 90;
@@ -72,11 +73,6 @@ namespace XenAdmin.Actions
             MetricUpdater.SetXenObjects(connection.Cache.VBDs);
             MetricUpdater.SetXenObjects(connection.Cache.VIFs);
             MetricUpdater.UpdateMetricsOnce();
-
-            m_Hosts = new List<HostInfo>();
-            m_SRs = new List<SRInfo>();
-            m_Networks = new List<NetworkInfo>();
-            m_VMs = new List<VMInfo>();
             itemCount = connection.Cache.Hosts.Length + connection.Cache.Networks.Length + connection.Cache.SRs.Length + connection.Cache.VMs.Length;
         }
 
@@ -227,13 +223,14 @@ namespace XenAdmin.Actions
         public class SRInfo
         {
             public SRInfo(string name, string SRUuid, string SRType,
-                string SRSize, string SRRemark)
+                string SRSize, string SRRemark, string SRDescription)
             {
                 _name = name;
                 _uuid = SRUuid;
                 _type = SRType;
                 _size = SRSize;
                 _remark = SRRemark;
+                _description = SRDescription;
             }
             public virtual string Name
             {
@@ -255,11 +252,16 @@ namespace XenAdmin.Actions
             {
                 get { return _remark; }
             }
+            public virtual string Description
+            {
+                get { return _description; }
+            }
             private string _name;
             private string _uuid;
             private string _type;
             private string _size;
             private string _remark;
+            private string _description;
         }
 
         public class NetworkInfo
@@ -304,7 +306,7 @@ namespace XenAdmin.Actions
         {
             public VMInfo(string Name, string VMuuid, string VMvCpuNum, string VMmemSize, string VMsrInfo,
                 string VMnicNum, string VMip, string VMmac, string VMosInfo,
-                string VMpowerStatus, string VMuptime, string VMhostInfo)
+                string VMpowerStatus, string VMuptime, string VMhostInfo, string VMTemplateName)
             {
                 _name = Name;
                 _uuid = VMuuid;
@@ -318,6 +320,7 @@ namespace XenAdmin.Actions
                 _powerStatus = VMpowerStatus;
                 _uptime = VMuptime;
                 _hostInfo = VMhostInfo;
+                _templateName = VMTemplateName;
             }
             public virtual string Name
             {
@@ -367,6 +370,10 @@ namespace XenAdmin.Actions
             {
                 get { return _hostInfo; }
             }
+            public virtual string TemplateName
+            {
+                get { return _templateName; }
+            }
             private string _name;
             private string _uuid;
             private string _vCpuNum;
@@ -379,9 +386,64 @@ namespace XenAdmin.Actions
             private string _powerStatus;
             private string _uptime;
             private string _hostInfo;
+            private string _templateName;
         }
 
-        
+        public class PGPUInfo
+        {
+            public PGPUInfo(string name, string PGPUuuid, string PGUPHost,
+                string BusAddress, string utilization, string memoryUtilization, string Temperature, string PowerStatus)
+            {
+                _name = name;
+                _uuid = PGPUuuid;
+                _host = PGUPHost;
+                _busAddress = BusAddress;
+                _utilization = utilization;
+                _MemUtilization = memoryUtilization;
+                _temperature = Temperature;
+                _powerStatus = PowerStatus;
+            }
+            public virtual string Name
+            {
+                get { return _name; }
+            }
+            public virtual string UUID
+            {
+                get { return _uuid; }
+            }
+            public virtual string Host
+            {
+                get { return _host; }
+            }
+            public virtual string BusAddress
+            {
+                get { return _busAddress; }
+            }
+            public virtual string Utilization
+            {
+                get { return _utilization; }
+            }
+            public virtual string MemoryUtilization
+            {
+                get { return _MemUtilization; }
+            }
+            public virtual string Temperature
+            {
+                get { return _temperature; }
+            }
+            public virtual string PowerStatus
+            {
+                get { return _powerStatus; }
+            }
+            private string _name;
+            private string _uuid;
+            private string _host;
+            private string _busAddress;
+            private string _utilization;
+            private string _MemUtilization;
+            private string _temperature;
+            private string _powerStatus;
+        }
 
         private string hostCpuUsageString(Host host)
         {
@@ -408,7 +470,7 @@ namespace XenAdmin.Actions
             if (total == 0 || Double.IsNaN(total) || Double.IsNaN(free))
                 return Messages.HYPHEN;
 
-            return String.Format(Messages.QUERY_MEMORY_USAGE, Util.MemorySizeStringWithoutUnits((total - free) * Util.BINARY_KILO), Util.MemorySizeString(total * Util.BINARY_KILO));
+            return String.Format(Messages.QUERY_MEMORY_USAGE, ((total - free) / total * 100).ToString("0.") + "%", Util.MemorySizeString(total * Util.BINARY_KILO));
         }
 
         private string hostNetworkUsageString(Host host)
@@ -440,7 +502,7 @@ namespace XenAdmin.Actions
             if (total == 0 || Double.IsNaN(total) || Double.IsNaN(free))
                 return Messages.HYPHEN;
 
-            return String.Format(Messages.QUERY_MEMORY_USAGE, Util.MemorySizeStringWithoutUnits((total - (free * Util.BINARY_KILO))), Util.MemorySizeString(total));
+            return String.Format(Messages.QUERY_MEMORY_USAGE, ((total - free) / total * 100).ToString("0.") + "%", Util.MemorySizeString(total));
         }
 
         private string vmCpuUsageString(VM vm)
@@ -460,72 +522,6 @@ namespace XenAdmin.Actions
             if (total == 1)
                 return String.Format(Messages.QUERY_PERCENT_OF_CPU, (sum * 100).ToString("0."));
             return String.Format(Messages.QUERY_PERCENT_OF_CPUS, ((sum * 100) / total).ToString("0."), total);
-        }
-
-        private ComparableList<ComparableAddress> IPAddressProperty(IXenObject o)
-        {
-            ComparableList<ComparableAddress> addresses = new ComparableList<ComparableAddress>();
-
-            if (o is VM)
-            {
-                VM vm = o as VM;
-                if (vm.not_a_real_vm)
-                    return null;
-
-                VM_guest_metrics metrics = vm.Connection.Resolve(vm.guest_metrics);
-                if (metrics == null)
-                    return null;
-
-                List<VIF> vifs = vm.Connection.ResolveAll(vm.VIFs);
-
-                foreach (VIF vif in vifs)
-                {
-                    // PR-1373 - VM_guest_metrics.networks is a dictionary of IP addresses in the format:
-                    // [["0/ip", <IPv4 address>], ["0/ipv6/0", <IPv6 address>], ["0/ipv6/1", <IPv6 address>]]
-                    foreach (var network in metrics.networks.Where(n => n.Key.StartsWith(String.Format("{0}/ip", vif.device))))
-                    {
-                        ComparableAddress ipAddress;
-                        if (!ComparableAddress.TryParse(network.Value, false, true, out ipAddress))
-                            continue;
-
-                        addresses.Add(ipAddress);
-                    }
-                }
-            }
-            else if (o is Host)
-            {
-                Host host = o as Host;
-
-                foreach (PIF pif in host.Connection.ResolveAll(host.PIFs))
-                {
-                    ComparableAddress ipAddress;
-                    if (!ComparableAddress.TryParse(pif.IP, false, true, out ipAddress))
-                        continue;
-
-                    addresses.Add(ipAddress);
-                }
-            }
-            else if (o is SR)
-            {
-                SR sr = (SR)o;
-
-                string target = sr.Target;
-                if (!string.IsNullOrEmpty(target))
-                {
-                    ComparableAddress ipAddress;
-                    if (ComparableAddress.TryParse(target, false, true, out ipAddress))
-                        addresses.Add(ipAddress);
-                }
-            }
-            else if (o is StorageLinkServer)
-            {
-                StorageLinkServer storageLinkServer = (StorageLinkServer)o;
-                ComparableAddress ipAddress;
-                if (ComparableAddress.TryParse(storageLinkServer.FriendlyName, false, true, out ipAddress))
-                    addresses.Add(ipAddress);
-            }
-
-            return (addresses.Count == 0 ? null : addresses);   // CA-28300
         }
 
         private void ComposeParameters(ReportViewer viewer, IXenConnection connection)
@@ -574,6 +570,12 @@ namespace XenAdmin.Actions
             ParamValuesStr += Messages.SIZE + "|";
             ParamLabelsStr += "LBL_LOCATION|";
             ParamValuesStr += Messages.NEWSR_LOCATION + "|";
+            ParamLabelsStr += "LBL_DESCRIPTION|";
+            ParamValuesStr += Messages.DESCRIPTION + "|";
+
+            //PGOU Info
+            ParamLabelsStr += "LBL_GPU|";
+            ParamValuesStr += Messages.GPU + "|";
 
             //VM Info
             ParamLabelsStr += "LBL_VMS|";
@@ -586,6 +588,11 @@ namespace XenAdmin.Actions
             ParamValuesStr += Messages.NIC + "|";
             ParamLabelsStr += "LBL_SERVER|";
             ParamValuesStr += Messages.SERVER + "|";
+            ParamLabelsStr += "LBL_TEMPLATE|";
+            ParamValuesStr += Messages.TEMPLATE + "|";
+            ParamLabelsStr += "LBL_HOSTORPOOL|";
+            ParamValuesStr += Messages.SERVER + "/" + Messages.POOL + "|";
+            
 
             ReportParameter ParamLabels = new ReportParameter("ParamLabels", ParamLabelsStr);
             ReportParameter ParamValues = new ReportParameter("ParamValues", ParamValuesStr);
@@ -594,6 +601,7 @@ namespace XenAdmin.Actions
 
         private void ComposeHostData()
         {
+            m_Hosts = new List<HostInfo>();
             foreach (Host host in Connection.Cache.Hosts)
             {
                 if (Cancelling)
@@ -624,7 +632,11 @@ namespace XenAdmin.Actions
                     }
                 }
                 List<PIF> pifs = network.Connection.ResolveAll(network.PIFs);
-                NetworkInfo buf = new NetworkInfo(network.Name, Helpers.VlanString(pifs[0]), network.LinkStatusString, pifs[0].MAC, network.MTU.ToString());
+                NetworkInfo buf;
+                if(pifs.Count != 0)
+                    buf = new NetworkInfo(network.Name, Helpers.VlanString(pifs[0]), network.LinkStatusString, pifs[0].MAC, network.MTU.ToString());
+                else
+                    buf = new NetworkInfo(network.Name, Messages.HYPHEN, network.LinkStatusString, Messages.HYPHEN, network.MTU.ToString());
                 m_Networks.Insert(0, buf);
                 itemIndex++;
                 PercentComplete = Convert.ToInt32(itemIndex * baseIndex / itemCount);
@@ -637,7 +649,49 @@ namespace XenAdmin.Actions
             {
                 if (Cancelling)
                     throw new CancelledException();
-                SRInfo buf = new SRInfo(sr.Name, sr.uuid, sr.type, sr.SizeString, sr.name_description);
+                string srSizeString;
+                if (sr.physical_size == 0)
+                    srSizeString = Messages.HYPHEN;
+                else
+                    srSizeString = string.Format(Messages.SR_SIZE_USED,
+                     (sr.physical_utilisation / sr.physical_size * 100).ToString("0.") + "%",
+                     Util.DiskSizeString(sr.physical_size),
+                     Util.DiskSizeString(sr.virtual_allocation));
+                string locationStr = Messages.HYPHEN;
+                foreach (XenRef<PBD> pbdRef in sr.PBDs)
+                {
+                    PBD pbd = PBD.get_record(Connection.Session, pbdRef);
+
+                    if (pbd.device_config.ContainsKey("location"))
+                    {
+                        if (locationStr == Messages.HYPHEN)
+                            locationStr = "location:" + pbd.device_config["location"] + ";";
+                        else
+                            locationStr += "location:" + pbd.device_config["location"] + ";";
+                    }
+                    if (pbd.device_config.ContainsKey("device"))
+                    {
+                        if (locationStr == Messages.HYPHEN)
+                            locationStr = "device:" + pbd.device_config["device"] + ";";
+                        else
+                            locationStr += "device:" + pbd.device_config["device"] + ";";
+                    }
+                    if (pbd.device_config.ContainsKey("SCSIid"))
+                    {
+                        if (locationStr == Messages.HYPHEN)
+                            locationStr = "SCSIid:" + pbd.device_config["SCSIid"] + ";";
+                        else
+                            locationStr += "SCSIid:" + pbd.device_config["SCSIid"] + ";";
+                    }
+                    if (pbd.device_config.ContainsKey("targetIQN"))
+                    {
+                        if (locationStr == Messages.HYPHEN)
+                            locationStr = "targetIQN:" + pbd.device_config["targetIQN"] + ";";
+                        else
+                            locationStr += "targetIQN:" + pbd.device_config["targetIQN"] + ";";
+                    }
+                }
+                SRInfo buf = new SRInfo(sr.Name, sr.uuid, sr.type, srSizeString, locationStr, sr.Description);
                 m_SRs.Insert(0, buf);
                 itemIndex++;
                 PercentComplete = Convert.ToInt32(itemIndex * baseIndex / itemCount);
@@ -656,13 +710,35 @@ namespace XenAdmin.Actions
                     PercentComplete = Convert.ToInt32(itemIndex * baseIndex / itemCount);
                     continue;
                 }
+
                 string OSinfo = Messages.HYPHEN;
                 string srInfo = "";
+                string MacInfo = "";
+                ComparableList<ComparableAddress> addresses = new ComparableList<ComparableAddress>();
                 if (vm.guest_metrics != null && !string.IsNullOrEmpty(vm.guest_metrics.opaque_ref) && !(vm.guest_metrics.opaque_ref.ToLower().Contains("null")))
                 {
-                    VM_guest_metrics gms = VM_guest_metrics.get_record(Connection.Session, vm.guest_metrics);
-                    OSinfo = gms.os_version["name"];
+                    VM_guest_metrics metrics = VM_guest_metrics.get_record(Connection.Session, vm.guest_metrics);
+                    OSinfo = metrics.os_version["name"];
+
+                    List<VIF> vifs = vm.Connection.ResolveAll(vm.VIFs);
+
+                    foreach (VIF vif in vifs)
+                    {
+                        MacInfo += vif.MAC + " ";
+                        // PR-1373 - VM_guest_metrics.networks is a dictionary of IP addresses in the format:
+                        // [["0/ip", <IPv4 address>], ["0/ipv6/0", <IPv6 address>], ["0/ipv6/1", <IPv6 address>]]
+                        foreach (var network in metrics.networks.Where(n => n.Key.StartsWith(String.Format("{0}/ip", vif.device))))
+                        {
+                            ComparableAddress ipAddress;
+                            if (!ComparableAddress.TryParse(network.Value, false, true, out ipAddress))
+                                continue;
+
+                            addresses.Add(ipAddress);
+                        }
+                    }
                 }
+                if (MacInfo.Length == 0)
+                    MacInfo = Messages.HYPHEN;
                 foreach (XenRef<VBD> vbdRef in vm.VBDs)
                 {
                     string device = VBD.get_device(Connection.Session, vbdRef);
@@ -674,19 +750,12 @@ namespace XenAdmin.Actions
                     if (vdiRef != null && !string.IsNullOrEmpty(vdiRef.opaque_ref) && !(vdiRef.opaque_ref.ToLower().Contains("null")))
                     {
                         VDI lVdi = VDI.get_record(Connection.Session, vdiRef);
-                        srInfo += device + ":" + lVdi.name_label + ":" + lVdi.SizeText + "\n";
+                        srInfo += lVdi.name_label + ":" + device + ":" + lVdi.SizeText + "\n";
                     }
                 }
                 if (srInfo.Length == 0)
                     srInfo = Messages.HYPHEN;
-                List<VIF> vifs = vm.Connection.ResolveAll(vm.VIFs);
-                string MacInfo = "";
-                foreach (VIF vif in vifs)
-                {
-                    MacInfo += vif.MAC + " ";
-                }
-                if (MacInfo.Length == 0)
-                    MacInfo = Messages.HYPHEN;
+                
                 string host_name;
                 if (vm.resident_on != null && !string.IsNullOrEmpty(vm.resident_on.opaque_ref) && !(vm.resident_on.opaque_ref.ToLower().Contains("null")))
                 {
@@ -697,12 +766,38 @@ namespace XenAdmin.Actions
                     host_name = Connection.Cache.Pools[0].Name;
                 }
 
+                string default_template_name = Messages.HYPHEN;
+                if(vm.other_config.ContainsKey("base_template_name"))
+                    default_template_name = vm.other_config["base_template_name"];
+                
                 VMInfo buf = new VMInfo(vm.Name, vm.uuid, vmCpuUsageString(vm), vmMemoryUsageString(vm),
-                    srInfo, Convert.ToString(vm.VIFs.Count), Convert.ToString(IPAddressProperty(vm)), MacInfo, OSinfo, Convert.ToString(vm.power_state),
-                    Convert.ToString(vm.RunningTime), host_name);
+                    srInfo, Convert.ToString(vm.VIFs.Count), Convert.ToString(addresses), MacInfo, OSinfo, Convert.ToString(vm.power_state),
+                    Convert.ToString(vm.RunningTime), host_name, default_template_name);
                 m_VMs.Insert(0, buf);
                 itemIndex++;
                 PercentComplete = Convert.ToInt32(itemIndex * baseIndex / itemCount);
+            }
+        }
+
+        
+
+        private void ComposeGPUData()
+        {
+            m_PGUPs = new List<PGPUInfo>();
+            foreach (XenAPI.PGPU pGpu in Connection.Cache.PGPUs)
+            {
+                Host host= Connection.Resolve(pGpu.host);
+                if (host == null)
+                    return;
+                PCI pci = Connection.Resolve(pGpu.PCI);
+                string pci_id = pci.pci_id.Replace(@":", "/");
+                double temperature = MetricUpdater.GetValue(host, String.Format("gpu_temperature_{0}", pci_id));
+                double powerStatus = MetricUpdater.GetValue(host, String.Format("power_usage_{0}", pci_id));
+                double utilisation_computer = MetricUpdater.GetValue(host, String.Format("utilisation_computer_{0}", pci_id));
+                double utilisation_memory_io = MetricUpdater.GetValue(host, String.Format("utilisation_memory_io_{0}", pci_id));
+                PGPUInfo buf = new PGPUInfo(pGpu.Name, pGpu.uuid, host.Name, pci.pci_id, utilisation_computer.ToString(),
+                    utilisation_memory_io.ToString(), temperature.ToString(), powerStatus.ToString());
+                m_PGUPs.Insert(0, buf);
             }
         }
 
@@ -730,14 +825,17 @@ namespace XenAdmin.Actions
             ComposeNetworkData();
             ComposeSRData();
             ComposeVMData();
+            ComposeGPUData();
             ReportDataSource rds1 = new ReportDataSource("Report_HostInfo", m_Hosts);
             ReportDataSource rds2 = new ReportDataSource("Report_NetworkInfo", m_Networks);
             ReportDataSource rds3 = new ReportDataSource("Report_SRInfo", m_SRs);
             ReportDataSource rds4 = new ReportDataSource("Report_VMInfo", m_VMs);
+            ReportDataSource rds5 = new ReportDataSource("Report_PGPUInfo", m_PGUPs);
             viewer.LocalReport.DataSources.Add(rds1);
             viewer.LocalReport.DataSources.Add(rds2);
             viewer.LocalReport.DataSources.Add(rds3);
             viewer.LocalReport.DataSources.Add(rds4);
+            viewer.LocalReport.DataSources.Add(rds5);
             ComposeParameters(viewer, Connection);
             byte[] bytes = viewer.LocalReport.Render("Excel", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
 
