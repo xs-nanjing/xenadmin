@@ -13741,6 +13741,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning: enable full audit trail log needs more disk space and memory on WLB Server!.
+        /// </summary>
+        public static string FULL_AUDIT_LOG_WARN_MSG {
+            get {
+                return ResourceManager.GetString("FULL_AUDIT_LOG_WARN_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Full Name.
         /// </summary>
         public static string FULL_NAME {
@@ -32998,6 +33007,33 @@ namespace XenAdmin {
         public static string WLB_ADVANCED_CONFIGURATION_SUBTEXT {
             get {
                 return ResourceManager.GetString("WLB_ADVANCED_CONFIGURATION_SUBTEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_DISABLE {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_DISABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_FULL {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_FULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_NORMAL {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_NORMAL", resourceCulture);
             }
         }
         

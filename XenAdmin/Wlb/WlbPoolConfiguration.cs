@@ -60,6 +60,14 @@ namespace XenAdmin.Wlb
         Medium,
         High
     }
+
+    public enum WlbAuditTrailLogGranularity
+    {
+        Disable,
+        Normal,
+        Full
+    }
+
 #endregion
 
     public class WlbPoolConfiguration : WlbConfigurationBase
@@ -419,6 +427,18 @@ namespace XenAdmin.Wlb
                 if (IsMROrLater)
                 {
                     SetConfigValueString("AutoBalanceAggressiveness", value.ToString());
+                }
+            }
+        }
+
+        public WlbAuditTrailLogGranularity PoolAuditGranularity
+        {
+            get { return (WlbAuditTrailLogGranularity)Enum.Parse(typeof(WlbAuditTrailLogGranularity), GetConfigValueString("PoolAuditLogGranularity")); }
+            set
+            {
+                if (IsMROrLater)
+                {
+                    SetConfigValueString("PoolAuditLogGranularity", value.ToString());
                 }
             }
         }

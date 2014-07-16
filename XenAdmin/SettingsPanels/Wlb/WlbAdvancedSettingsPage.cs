@@ -171,6 +171,12 @@ namespace XenAdmin.SettingsPanels
                 comboBoxAutoBalanceAggressiveness.DisplayMember = "value";
                 comboBoxAutoBalanceAggressiveness.SelectedValue = _poolConfiguration.AutoBalanceAggressiveness;
 
+                //Set up the Pool Audit Trail Granularity
+                comboBoxPoolAuditTrailLevel.DataSource = new BindingSource(PoolAuditGranularity(), null);
+                comboBoxPoolAuditTrailLevel.ValueMember = "key";
+                comboBoxPoolAuditTrailLevel.DisplayMember = "value";
+                comboBoxPoolAuditTrailLevel.SelectedValue = _poolConfiguration.PoolAuditGranularity;
+
                 numericUpDownPollInterval.Value = (decimal)_poolConfiguration.AutoBalancePollIntervals;
 
                 numericUpDownRelocationInterval.Value = (decimal)_poolConfiguration.RecentMoveMinutes;
@@ -213,6 +219,17 @@ namespace XenAdmin.SettingsPanels
             aggressiveness.Add(WlbPoolAutoBalanceAggressiveness.Low, Messages.WLB_SEVERITY_LOW);
 
             return aggressiveness;
+        }
+
+        private Dictionary<WlbAuditTrailLogGranularity, string> PoolAuditGranularity()
+        {
+            Dictionary<WlbAuditTrailLogGranularity, string> auditLogGranularity = new Dictionary<WlbAuditTrailLogGranularity, string>();
+
+            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Disable, Messages.WLB_AUDIT_LOG_DISABLE);
+            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Normal, Messages.WLB_AUDIT_LOG_NORMAL);
+            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Full, Messages.WLB_AUDIT_LOG_FULL);
+
+            return auditLogGranularity;
         }
 
         private bool IsValidSmtpAddress()
@@ -297,6 +314,14 @@ namespace XenAdmin.SettingsPanels
                 _hasChanged = true;
             }
         }
+        private void comboBoxPoolAuditTrailLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!_loading)
+            {
+                _hasChanged = true;
+            }
+        }
+
 
         private void numericUpDownRelocationInterval_KeyUp(object sender, KeyEventArgs e)
         {
@@ -318,6 +343,7 @@ namespace XenAdmin.SettingsPanels
                 _poolConfiguration.AutoBalanceSeverity = (WlbPoolAutoBalanceSeverity)comboBoxOptimizationSeverity.SelectedValue;
                 _poolConfiguration.AutoBalanceAggressiveness = (WlbPoolAutoBalanceAggressiveness)comboBoxAutoBalanceAggressiveness.SelectedValue;
                 _poolConfiguration.AutoBalancePollIntervals = (double)numericUpDownPollInterval.Value;
+                _poolConfiguration.PoolAuditGranularity = (WlbAuditTrailLogGranularity)comboBoxPoolAuditTrailLevel.SelectedValue;
                 if (!_poolConfiguration.IsTampaOrLater)
                 {
                     _poolConfiguration.ReportingSMTPServer = textBoxSMTPServer.Text;
