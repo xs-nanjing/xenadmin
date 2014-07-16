@@ -61,7 +61,7 @@ namespace XenAdmin.Actions
         /// <param name="connection"></param>
         /// <param name="filename"></param>
         public ExportStaticReportAction(IXenConnection connection, string filename)
-            : base(connection, string.Format(Messages.ACTION_EXPORT_STATISTIC_FROM_X, Helpers.GetName(connection)),
+            : base(connection, string.Format(Messages.ACTION_EXPORT_RESOURCE_LIST_FROM_X, Helpers.GetName(connection)),
             Messages.ACTION_EXPORT_DESCRIPTION_PREPARING)
         {
             Pool = Helpers.GetPool(connection);
@@ -81,8 +81,8 @@ namespace XenAdmin.Actions
             SafeToExit = false;
             Description = Messages.ACTION_EXPORT_DESCRIPTION_IN_PROGRESS;
             RelatedTask = XenAPI.Task.create(Session,
-                string.Format(Messages.ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME, this.Connection.Cache.Pools[0].Name),
-                string.Format(Messages.ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION, this.Connection.Cache.Pools[0].Name, _filename));
+                string.Format(Messages.ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_NAME, this.Connection.Cache.Pools[0].Name),
+                string.Format(Messages.ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_DESCRIPTION, this.Connection.Cache.Pools[0].Name, _filename));
 
             if (Cancelling)
                 throw new CancelledException();
@@ -94,7 +94,7 @@ namespace XenAdmin.Actions
                 Uri.EscapeDataString(this.Connection.Cache.Pools[0].uuid),
                 Uri.EscapeDataString(this.RelatedTask.opaque_ref));
 
-            log.DebugFormat("Exporting Statistic report from {1} to {2}", this.Connection.Cache.Pools[0].Name, uriBuilder.ToString(), _filename);
+            log.DebugFormat("Exporting resource list report from {1} to {2}", this.Connection.Cache.Pools[0].Name, uriBuilder.ToString(), _filename);
  
             try
             {
@@ -125,12 +125,8 @@ namespace XenAdmin.Actions
             else if (_exception != null)
             {
                 log.Warn(string.Format("Export of Pool {0} failed", this.Connection.Cache.Pools[0].Name), _exception);
-                var fi = new FileInfo(_filename);
                 log.DebugFormat("Progress of the action until exception: {0}", PercentComplete);
-                log.DebugFormat("Size file exported until exception: {0}", fi.Length);
                 
-                log.DebugFormat("Deleting {0}", _filename);
-                File.Delete(_filename);
                 this.Description = Messages.ACTION_EXPORT_DESCRIPTION_FAILED;
                 throw new Exception(Description);
             }
@@ -633,8 +629,8 @@ namespace XenAdmin.Actions
                 }
                 List<PIF> pifs = network.Connection.ResolveAll(network.PIFs);
                 NetworkInfo buf;
-                if(pifs.Count != 0)
-                    buf = new NetworkInfo(network.Name, Helpers.VlanString(pifs[0]), network.LinkStatusString, pifs[0].MAC, network.MTU.ToString());
+                if (pifs.Count != 0)
+                   buf = new NetworkInfo(network.Name, Helpers.VlanString(pifs[0]), network.LinkStatusString, pifs[0].MAC, network.MTU.ToString());
                 else
                     buf = new NetworkInfo(network.Name, Messages.HYPHEN, network.LinkStatusString, Messages.HYPHEN, network.MTU.ToString());
                 m_Networks.Insert(0, buf);
@@ -737,6 +733,7 @@ namespace XenAdmin.Actions
                         }
                     }
                 }
+                string host_name;
                 if (MacInfo.Length == 0)
                     MacInfo = Messages.HYPHEN;
                 foreach (XenRef<VBD> vbdRef in vm.VBDs)
@@ -756,7 +753,6 @@ namespace XenAdmin.Actions
                 if (srInfo.Length == 0)
                     srInfo = Messages.HYPHEN;
                 
-                string host_name;
                 if (vm.resident_on != null && !string.IsNullOrEmpty(vm.resident_on.opaque_ref) && !(vm.resident_on.opaque_ref.ToLower().Contains("null")))
                 {
                     host_name = Host.get_name_label(Connection.Session, vm.resident_on);
@@ -814,9 +810,11 @@ namespace XenAdmin.Actions
             string encoding = string.Empty;
             string extension = string.Empty;
             CanCancel = true;
+            FileStream fs = null;
             if (Cancelling)
                 throw new CancelledException();
             // Setup the report viewer object and get the array of bytes
+            
             ReportViewer viewer = new ReportViewer();
             viewer.ProcessingMode = ProcessingMode.Local;
             viewer.LocalReport.ReportPath = "resource_tatistic_report.rdlc";
@@ -838,8 +836,7 @@ namespace XenAdmin.Actions
             viewer.LocalReport.DataSources.Add(rds5);
             ComposeParameters(viewer, Connection);
             byte[] bytes = viewer.LocalReport.Render("Excel", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
-
-            FileStream fs = null;
+               
             try
             {
                 fs = new FileStream(_filename, FileMode.Create);

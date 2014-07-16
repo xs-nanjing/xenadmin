@@ -826,29 +826,29 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exporting {0} resource statistic report to file {1}.
+        ///   Looks up a localized string similar to Exporting {0} resource resource list to file {1}.
         /// </summary>
-        public static string ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION {
+        public static string ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_DESCRIPTION {
             get {
-                return ResourceManager.GetString("ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION", resourceCulture);
+                return ResourceManager.GetString("ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_DESCRIPTION", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exporting {0} resource statistic report.
+        ///   Looks up a localized string similar to Exporting {0} resource resource list.
         /// </summary>
-        public static string ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME {
+        public static string ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_NAME {
             get {
-                return ResourceManager.GetString("ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME", resourceCulture);
+                return ResourceManager.GetString("ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_NAME", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exporting Statistic from &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Exporting resource list from &apos;{0}&apos;.
         /// </summary>
-        public static string ACTION_EXPORT_STATISTIC_FROM_X {
+        public static string ACTION_EXPORT_RESOURCE_LIST_FROM_X {
             get {
-                return ResourceManager.GetString("ACTION_EXPORT_STATISTIC_FROM_X", resourceCulture);
+                return ResourceManager.GetString("ACTION_EXPORT_RESOURCE_LIST_FROM_X", resourceCulture);
             }
         }
         
@@ -13741,6 +13741,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning: enable full audit trail log needs more disk space and memory on WLB Server!.
+        /// </summary>
+        public static string FULL_AUDIT_LOG_WARN_MSG {
+            get {
+                return ResourceManager.GetString("FULL_AUDIT_LOG_WARN_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Full Name.
         /// </summary>
         public static string FULL_NAME {
@@ -18586,11 +18595,11 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Resource Statistic Report.
+        ///   Looks up a localized string similar to Export resource list.
         /// </summary>
-        public static string MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC {
+        public static string MAINWINDOW_EXPORT_POOL_RESOURCE_LIST {
             get {
-                return ResourceManager.GetString("MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC", resourceCulture);
+                return ResourceManager.GetString("MAINWINDOW_EXPORT_POOL_RESOURCE_LIST", resourceCulture);
             }
         }
         
@@ -32998,6 +33007,33 @@ namespace XenAdmin {
         public static string WLB_ADVANCED_CONFIGURATION_SUBTEXT {
             get {
                 return ResourceManager.GetString("WLB_ADVANCED_CONFIGURATION_SUBTEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_DISABLE {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_DISABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_FULL {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_FULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_NORMAL {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_NORMAL", resourceCulture);
             }
         }
         

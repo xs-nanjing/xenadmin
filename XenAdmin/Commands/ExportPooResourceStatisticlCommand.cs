@@ -38,20 +38,20 @@ using System.IO;
 namespace XenAdmin.Commands
 {
     /// <summary>
-    /// export statistic report for the pool.
+    /// export resource report for the pool.
     /// </summary>
-    internal class ExportPooResourceStatisticlCommand : Command
+    internal class ExportPooResourceListCommand : Command
     {
-        public ExportPooResourceStatisticlCommand()
+        public ExportPooResourceListCommand()
         {
         }
 
-        public ExportPooResourceStatisticlCommand(IMainWindow mainWindow, IEnumerable<SelectedItem> selection)
+        public ExportPooResourceListCommand(IMainWindow mainWindow, IEnumerable<SelectedItem> selection)
             : base(mainWindow, selection)
         {
         }
 
-        public ExportPooResourceStatisticlCommand(IMainWindow mainWindow, SelectedItem selection)
+        public ExportPooResourceListCommand(IMainWindow mainWindow, SelectedItem selection)
             : base(mainWindow, selection)
         {
         }
@@ -89,7 +89,7 @@ namespace XenAdmin.Commands
         {
             get
             {
-                return Messages.MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC;
+                return Messages.MAINWINDOW_EXPORT_POOL_RESOURCE_LIST;
             }
         }
 
@@ -97,7 +97,7 @@ namespace XenAdmin.Commands
         {
             get
             {
-                return Messages.MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC;
+                return Messages.MAINWINDOW_EXPORT_POOL_RESOURCE_LIST;
             }
         }
 

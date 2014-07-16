@@ -141,7 +141,7 @@ namespace XenAdmin
             this.removeServerToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.poolReconnectAsToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.disconnectPoolToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
-            this.exportResourceStatisticPoolToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
+            this.exportResourceListPoolToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.virtualAppliancesToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
@@ -826,7 +826,7 @@ namespace XenAdmin
             this.removeServerToolStripMenuItem,
             this.poolReconnectAsToolStripMenuItem,
             this.disconnectPoolToolStripMenuItem,
-            this.exportResourceStatisticPoolToolStripMenuItem,
+            this.exportResourceListPoolToolStripMenuItem,
             this.toolStripSeparator27,
             this.virtualAppliancesToolStripMenuItem,
             this.toolStripSeparator30,
@@ -880,11 +880,11 @@ namespace XenAdmin
             this.disconnectPoolToolStripMenuItem.Name = "disconnectPoolToolStripMenuItem";
             resources.ApplyResources(this.disconnectPoolToolStripMenuItem, "disconnectPoolToolStripMenuItem");
             // 
-            // exportResourceStatisticPoolToolStripMenuItem
+            // exportResourceListoolToolStripMenuItem
             // 
-            this.exportResourceStatisticPoolToolStripMenuItem.Command = new XenAdmin.Commands.ExportPooResourceStatisticlCommand();
-            this.exportResourceStatisticPoolToolStripMenuItem.Name = "exportResourceStatisticPoolToolStripMenuItem";
-            resources.ApplyResources(this.exportResourceStatisticPoolToolStripMenuItem, "exportResourceStatisticPoolToolStripMenuItem");
+            this.exportResourceListPoolToolStripMenuItem.Command = new XenAdmin.Commands.ExportPooResourceListCommand();
+            this.exportResourceListPoolToolStripMenuItem.Name = "exportResourceStatisticPoolToolStripMenuItem";
+            resources.ApplyResources(this.exportResourceListPoolToolStripMenuItem, "exportResourceListPoolToolStripMenuItem");
             // 
             // toolStripSeparator27
             // 
@@ -1860,7 +1860,7 @@ namespace XenAdmin
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private CommandToolStripMenuItem deleteToolStripMenuItem;
         private CommandToolStripMenuItem disconnectPoolToolStripMenuItem;
-        private CommandToolStripMenuItem exportResourceStatisticPoolToolStripMenuItem;
+        private CommandToolStripMenuItem exportResourceListPoolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HostMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
         private CommandToolStripMenuItem ServerPropertiesToolStripMenuItem;

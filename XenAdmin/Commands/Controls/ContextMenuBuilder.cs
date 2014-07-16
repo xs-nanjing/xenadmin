@@ -241,7 +241,6 @@ namespace XenAdmin.Commands
             public override void Build(IMainWindow mainWindow, SelectedItemCollection selection, ContextMenuItemCollection items)
             {
                 items.AddIfEnabled(new DisconnectPoolCommand(mainWindow, selection), true);
-                items.AddIfEnabled(new ExportPooResourceStatisticlCommand(mainWindow, selection), true);
                 items.AddIfEnabled(new EditTagsCommand(mainWindow, selection));
                 items.AddPluginItems(PluginContextMenu.pool, selection);
             }
@@ -729,7 +728,6 @@ namespace XenAdmin.Commands
                 items.AddSeparator();
                 items.Add(new AddHostToSelectedPoolToolStripMenuItem(mainWindow, selection, true));
                 items.Add(new DisconnectPoolCommand(mainWindow, selection));
-                items.Add(new ExportPooResourceStatisticlCommand(mainWindow, selection));
                 items.Add(new PoolReconnectAsCommand(mainWindow, selection));
                 items.AddSeparator();
                 items.AddPluginItems(PluginContextMenu.pool, selection);

@@ -4811,6 +4811,9 @@ Would you like to eject these ISOs before continuing?</value>
   <data name="FULLY_APPLIED" xml:space="preserve">
     <value>Fully applied</value>
   </data>
+  <data name="FULL_AUDIT_LOG_WARN_MSG" xml:space="preserve">
+    <value>Warning: enable full audit trail log needs more disk space and memory on WLB Server!</value>
+  </data>
   <data name="FULL_NAME" xml:space="preserve">
     <value>Full Name</value>
   </data>
@@ -11441,6 +11444,15 @@ To learn more about the XenServer Dynamic Workload Balancing feature or to start
   <data name="WLB_ADVANCED_CONFIGURATION_SUBTEXT" xml:space="preserve">
     <value />
   </data>
+  <data name="WLB_AUDIT_LOG_DISABLE" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="WLB_AUDIT_LOG_FULL" xml:space="preserve">
+    <value>Full</value>
+  </data>
+  <data name="WLB_AUDIT_LOG_NORMAL" xml:space="preserve">
+    <value>Normal</value>
+  </data>
   <data name="WLB_AUTOMATION" xml:space="preserve">
     <value>Automation</value>
   </data>
@@ -12146,16 +12158,16 @@ You will need to navigate to the Console on each of the selected VMs to complete
   <data name="YOU_ARE_HERE" xml:space="preserve">
     <value>You are here</value>
   </data>
-  <data name="ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_NAME" xml:space="preserve">
-    <value>Exporting {0} resource statistic report</value>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_NAME" xml:space="preserve">
+    <value>Exporting {0} resource resource list</value>
   </data>
-  <data name="ACTION_EXPORT_POOL_RESOURCE_STATISTIC_TASK_DESCRIPTION" xml:space="preserve">
-    <value>Exporting {0} resource statistic report to file {1}</value>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_DESCRIPTION" xml:space="preserve">
+    <value>Exporting {0} resource resource list to file {1}</value>
   </data>
-  <data name="ACTION_EXPORT_STATISTIC_FROM_X" xml:space="preserve">
-    <value>Exporting Statistic from '{0}'</value>
+  <data name="ACTION_EXPORT_RESOURCE_LIST_FROM_X" xml:space="preserve">
+    <value>Exporting resource list from '{0}'</value>
   </data>
-  <data name="MAINWINDOW_EXPORT_POOL_RESOURCE_STATISTIC" xml:space="preserve">
-    <value>Resource Statistic Report</value>
+  <data name="MAINWINDOW_EXPORT_POOL_RESOURCE_LIST" xml:space="preserve">
+    <value>Export resource list</value>
   </data>
 </root>
