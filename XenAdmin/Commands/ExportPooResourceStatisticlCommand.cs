@@ -103,16 +103,15 @@ namespace XenAdmin.Commands
 
         private bool Execute(IXenConnection connection)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = " xls files(*.xls)|*.xls";
-            saveFileDialog1.FilterIndex = 1;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "xls files(*.xls)|*.xls|csv files(*.csv)|*.csv";
+            saveFileDialog.FilterIndex = 1;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string localFilePath = saveFileDialog1.FileName.ToString();
                 try
                 {
-                    File.Delete(localFilePath);
-                    new XenAdmin.Actions.ExportStaticReportAction(connection, localFilePath).RunAsync();
+                    File.Delete(saveFileDialog.FileName);
+                    new XenAdmin.Actions.ExportStaticReportAction(connection, saveFileDialog.FileName, saveFileDialog.FilterIndex).RunAsync();
                 }
                 catch (Exception exp)
                 {
