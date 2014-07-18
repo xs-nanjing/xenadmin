@@ -813,7 +813,6 @@ namespace XenAdmin.Actions
             ReportViewer viewer = new ReportViewer();
             viewer.ProcessingMode = ProcessingMode.Local;
             viewer.LocalReport.ReportPath = "resource_tatistic_report.rdlc";
-
             ReportDataSource rds1 = new ReportDataSource("Report_HostInfo", m_Hosts);
             ReportDataSource rds2 = new ReportDataSource("Report_NetworkInfo", m_Networks);
             ReportDataSource rds3 = new ReportDataSource("Report_SRInfo", m_SRs);
