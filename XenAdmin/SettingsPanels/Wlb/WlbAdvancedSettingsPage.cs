@@ -172,10 +172,17 @@ namespace XenAdmin.SettingsPanels
                 comboBoxAutoBalanceAggressiveness.SelectedValue = _poolConfiguration.AutoBalanceAggressiveness;
 
                 //Set up the Pool Audit Trail Granularity
-                comboBoxPoolAuditTrailLevel.DataSource = new BindingSource(PoolAuditGranularity(), null);
-                comboBoxPoolAuditTrailLevel.ValueMember = "key";
-                comboBoxPoolAuditTrailLevel.DisplayMember = "value";
-                comboBoxPoolAuditTrailLevel.SelectedValue = _poolConfiguration.PoolAuditGranularity;
+                if(_poolConfiguration.IsCreedenceOrLater)
+                {
+                    comboBoxPoolAuditTrailLevel.DataSource = new BindingSource(PoolAuditGranularity(), null);
+                    comboBoxPoolAuditTrailLevel.ValueMember = "key";
+                    comboBoxPoolAuditTrailLevel.DisplayMember = "value";
+                    comboBoxPoolAuditTrailLevel.SelectedValue = _poolConfiguration.PoolAuditGranularity;
+                }
+                else
+                {
+                    HidePoolAuditTrailGranularitySection();
+                }
 
                 numericUpDownPollInterval.Value = (decimal)_poolConfiguration.AutoBalancePollIntervals;
 
@@ -225,9 +232,9 @@ namespace XenAdmin.SettingsPanels
         {
             Dictionary<WlbAuditTrailLogGranularity, string> auditLogGranularity = new Dictionary<WlbAuditTrailLogGranularity, string>();
 
-            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Disable, Messages.WLB_AUDIT_LOG_DISABLE);
+            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Minimum, Messages.WLB_AUDIT_LOG_MINIMUM);
             auditLogGranularity.Add(WlbAuditTrailLogGranularity.Normal, Messages.WLB_AUDIT_LOG_NORMAL);
-            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Full, Messages.WLB_AUDIT_LOG_FULL);
+            auditLogGranularity.Add(WlbAuditTrailLogGranularity.Maximum, Messages.WLB_AUDIT_LOG_MAXIMUM);
 
             return auditLogGranularity;
         }
@@ -256,6 +263,14 @@ namespace XenAdmin.SettingsPanels
             sectionHeaderLabelHistData.Visible = false;
             labelHistData.Visible = false;
             panelHistData.Visible = false;
+        }
+
+        private void HidePoolAuditTrailGranularitySection()
+        {
+            label2.Visible = false;
+            sectionHeaderLabelAuditTrail.Visible = false;
+            labelAuditTrail.Visible = false;
+            auditTrailPanel.Visible = false;
         }
 
         private void ToggleShowAggressiveness()
@@ -343,7 +358,11 @@ namespace XenAdmin.SettingsPanels
                 _poolConfiguration.AutoBalanceSeverity = (WlbPoolAutoBalanceSeverity)comboBoxOptimizationSeverity.SelectedValue;
                 _poolConfiguration.AutoBalanceAggressiveness = (WlbPoolAutoBalanceAggressiveness)comboBoxAutoBalanceAggressiveness.SelectedValue;
                 _poolConfiguration.AutoBalancePollIntervals = (double)numericUpDownPollInterval.Value;
-                _poolConfiguration.PoolAuditGranularity = (WlbAuditTrailLogGranularity)comboBoxPoolAuditTrailLevel.SelectedValue;
+                if(_poolConfiguration.IsCreedenceOrLater)
+                {
+                    _poolConfiguration.PoolAuditGranularity = (WlbAuditTrailLogGranularity)comboBoxPoolAuditTrailLevel.SelectedValue;
+                }
+                
                 if (!_poolConfiguration.IsTampaOrLater)
                 {
                     _poolConfiguration.ReportingSMTPServer = textBoxSMTPServer.Text;

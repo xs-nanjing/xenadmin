@@ -4690,6 +4690,9 @@ XenServer 可以重新启动服务器并将服务器的 CPU 级别降至池中�
   <data name="FULLY_APPLIED" xml:space="preserve">
     <value>已完全应用</value>
   </data>
+  <data name="MAXIMUM_AUDIT_LOG_WARN_MSG" xml:space="preserve">
+    <value>警告： 开启最大审计报告将会消耗更多WLB硬盘空间和内存！</value>
+  </data>
   <data name="FULL_NAME" xml:space="preserve">
     <value>完整名称</value>
   </data>
@@ -11083,6 +11086,15 @@ XenServer 可以重新启动服务器并将其 CPU 降至主服务器的级别�
   <data name="WLB_ADVANCED_CONFIGURATION_SUBTEXT" xml:space="preserve">
     <value />
   </data>
+  <data name="WLB_AUDIT_LOG_MINIMUM" xml:space="preserve">
+    <value>最小</value>
+  </data>
+  <data name="WLB_AUDIT_LOG_MAXIMUM" xml:space="preserve">
+    <value>最大</value>
+  </data>
+  <data name="WLB_AUDIT_LOG_NORMAL" xml:space="preserve">
+    <value>常规</value>
+  </data>
   <data name="WLB_AUTOMATION" xml:space="preserve">
     <value>自动化</value>
   </data>
@@ -11806,5 +11818,14 @@ XenServer 可以重新启动服务器并将其 CPU 降至主服务器的级别�
   </data>
   <data name="MAINWINDOW_EXPORT_POOL_RESOURCE_LIST" xml:space="preserve">
     <value>资源统计报表</value>
+  </data>
+  <data name="RUN_REPORT" xml:space="preserve">
+    <value>运行报告(&amp;R)</value>
+  </data>
+  <data name="RUN_MORE_REPORT" xml:space="preserve">
+    <value>更多报告(&amp;M)</value>
+  </data>
+  <data name="WLB_MORE_REPORT_BANNER" xml:space="preserve">
+    <value>请点击“更多报告”获取更多报告内容</value>
   </data>
 </root>

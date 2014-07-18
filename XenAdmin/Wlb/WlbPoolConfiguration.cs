@@ -63,9 +63,9 @@ namespace XenAdmin.Wlb
 
     public enum WlbAuditTrailLogGranularity
     {
-        Disable,
+        Minimum,
         Normal,
-        Full
+        Maximum
     }
 
 #endregion
@@ -83,7 +83,8 @@ namespace XenAdmin.Wlb
         private const int WlbVersion_Minor_Boston = 0;
         private const int WlbVersion_Major_Tampa = 6;
         private const int WlbVersion_Minor_Tampa = 1;
-
+        private const int WlbVersion_Major_Creedence = 6;
+        private const int WlbVersion_Minor_Creedence = 5;
 
 #endregion
 
@@ -441,6 +442,11 @@ namespace XenAdmin.Wlb
                     SetConfigValueString("PoolAuditLogGranularity", value.ToString());
                 }
             }
+        }
+
+        public bool IsCreedenceOrLater
+        {
+            get { return ((this.WlbMajorVersion >= WlbVersion_Major_Creedence) && (this.WlbMinorVersion >= WlbVersion_Minor_Creedence)); }
         }
 
         public bool IsTampaOrLater

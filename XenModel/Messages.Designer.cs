@@ -13741,11 +13741,11 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning: enable full audit trail log needs more disk space and memory on WLB Server!.
+        ///   Looks up a localized string similar to Warning: enable maximum audit trail log needs more disk space and memory on WLB Server!.
         /// </summary>
-        public static string FULL_AUDIT_LOG_WARN_MSG {
+        public static string MAXIMUM_AUDIT_LOG_WARN_MSG {
             get {
-                return ResourceManager.GetString("FULL_AUDIT_LOG_WARN_MSG", resourceCulture);
+                return ResourceManager.GetString("MAXIMUM_AUDIT_LOG_WARN_MSG", resourceCulture);
             }
         }
         
@@ -33011,20 +33011,20 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable.
+        ///   Looks up a localized string similar to Minimum.
         /// </summary>
-        public static string WLB_AUDIT_LOG_DISABLE {
+        public static string WLB_AUDIT_LOG_MINIMUM {
             get {
-                return ResourceManager.GetString("WLB_AUDIT_LOG_DISABLE", resourceCulture);
+                return ResourceManager.GetString("WLB_AUDIT_LOG_MINIMUM", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Full.
+        ///   Looks up a localized string similar to Maximum.
         /// </summary>
-        public static string WLB_AUDIT_LOG_FULL {
+        public static string WLB_AUDIT_LOG_MAXIMUM {
             get {
-                return ResourceManager.GetString("WLB_AUDIT_LOG_FULL", resourceCulture);
+                return ResourceManager.GetString("WLB_AUDIT_LOG_MAXIMUM", resourceCulture);
             }
         }
         
@@ -35221,6 +35221,33 @@ namespace XenAdmin {
         public static string YOU_ARE_HERE {
             get {
                 return ResourceManager.GetString("YOU_ARE_HERE", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to run report.
+        /// </summary>
+        public static string RUN_REPORT {
+            get {
+                return ResourceManager.GetString("RUN_REPORT", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to run more report.
+        /// </summary>
+        public static string RUN_MORE_REPORT {
+            get {
+                return ResourceManager.GetString("RUN_MORE_REPORT", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Click "More" for more report contents.
+        /// </summary>
+        public static string WLB_MORE_REPORT_BANNER {
+            get {
+                return ResourceManager.GetString("WLB_MORE_REPORT_BANNER", resourceCulture);
             }
         }
     }

@@ -31,7 +31,7 @@ namespace XenAdmin.SettingsPanels
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WlbAdvancedSettingsPage));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelAuditTrail = new System.Windows.Forms.Label();
-            this.sectionHeaderLabelAudtTrail = new XenAdmin.Controls.SectionHeaderLabel();
+            this.sectionHeaderLabelAuditTrail = new XenAdmin.Controls.SectionHeaderLabel();
             this.comboBoxPoolAuditTrailLevel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.sectionHeaderLabelRepSub = new XenAdmin.Controls.SectionHeaderLabel();
@@ -89,7 +89,7 @@ namespace XenAdmin.SettingsPanels
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.labelAuditTrail, 0, 21);
-            this.tableLayoutPanel1.Controls.Add(this.sectionHeaderLabelAudtTrail, 0, 20);
+            this.tableLayoutPanel1.Controls.Add(this.sectionHeaderLabelAuditTrail, 0, 20);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 19);
             this.tableLayoutPanel1.Controls.Add(this.sectionHeaderLabelRepSub, 0, 16);
             this.tableLayoutPanel1.Controls.Add(this.sectionHeaderLabelHistData, 0, 13);
@@ -119,13 +119,13 @@ namespace XenAdmin.SettingsPanels
             this.labelAuditTrail.BackColor = System.Drawing.Color.Transparent;
             this.labelAuditTrail.Name = "labelAuditTrail";
             // 
-            // sectionHeaderLabelAudtTrail
+            // sectionHeaderLabelAuditTrail
             // 
-            resources.ApplyResources(this.sectionHeaderLabelAudtTrail, "sectionHeaderLabelAudtTrail");
-            this.sectionHeaderLabelAudtTrail.FocusControl = this.comboBoxPoolAuditTrailLevel;
-            this.sectionHeaderLabelAudtTrail.LineColor = System.Drawing.SystemColors.ActiveBorder;
-            this.sectionHeaderLabelAudtTrail.LineLocation = XenAdmin.Controls.SectionHeaderLabel.VerticalAlignment.Middle;
-            this.sectionHeaderLabelAudtTrail.Name = "sectionHeaderLabelAudtTrail";
+            resources.ApplyResources(this.sectionHeaderLabelAuditTrail, "sectionHeaderLabelAuditTrail");
+            this.sectionHeaderLabelAuditTrail.FocusControl = this.comboBoxPoolAuditTrailLevel;
+            this.sectionHeaderLabelAuditTrail.LineColor = System.Drawing.SystemColors.ActiveBorder;
+            this.sectionHeaderLabelAuditTrail.LineLocation = XenAdmin.Controls.SectionHeaderLabel.VerticalAlignment.Middle;
+            this.sectionHeaderLabelAuditTrail.Name = "sectionHeaderLabelAuditTrail";
             // 
             // comboBoxPoolAuditTrailLevel
             // 
@@ -512,7 +512,7 @@ namespace XenAdmin.SettingsPanels
         private System.Windows.Forms.FlowLayoutPanel panelHistData;
         private System.Windows.Forms.FlowLayoutPanel panelRepSub;
         private System.Windows.Forms.Label labelAuditTrail;
-        private Controls.SectionHeaderLabel sectionHeaderLabelAudtTrail;
+        private Controls.SectionHeaderLabel sectionHeaderLabelAuditTrail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel auditTrailPanel;
         private System.Windows.Forms.ComboBox comboBoxPoolAuditTrailLevel;
