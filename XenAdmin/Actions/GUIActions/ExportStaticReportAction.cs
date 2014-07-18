@@ -39,6 +39,8 @@ using Microsoft.Reporting.WinForms;
 using System.Collections.Generic;
 using XenAdmin.XenSearch;
 using System.Linq;
+using System.Text;
+using System.Diagnostics;
 
 namespace XenAdmin.Actions
 {
@@ -46,6 +48,7 @@ namespace XenAdmin.Actions
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly string _filename;
+        private readonly int _fileType;
         private Exception _exception = null;
         private static MetricUpdater MetricUpdater;
         private List<HostInfo> m_Hosts;
@@ -56,16 +59,18 @@ namespace XenAdmin.Actions
         long itemCount = 0;
         long itemIndex = 0;
         long baseIndex = 90;
+        enum FILE_TYPE_INDEX { XLS = 1, CSV = 2 };
         /// <summary> 
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="filename"></param>
-        public ExportStaticReportAction(IXenConnection connection, string filename)
+        public ExportStaticReportAction(IXenConnection connection, string filename, int fileType)
             : base(connection, string.Format(Messages.ACTION_EXPORT_RESOURCE_LIST_FROM_X, Helpers.GetName(connection)),
             Messages.ACTION_EXPORT_DESCRIPTION_PREPARING)
         {
             Pool = Helpers.GetPool(connection);
             _filename = filename;
+            _fileType = fileType;
             MetricUpdater = new MetricUpdater();
             MetricUpdater.SetXenObjects(connection.Cache.Hosts);
             MetricUpdater.SetXenObjects(connection.Cache.VMs);
@@ -656,7 +661,7 @@ namespace XenAdmin.Actions
                 string locationStr = Messages.HYPHEN;
                 foreach (XenRef<PBD> pbdRef in sr.PBDs)
                 {
-                    PBD pbd = PBD.get_record(Connection.Session, pbdRef);
+                    PBD pbd = Connection.Resolve(pbdRef);
 
                     if (pbd.device_config.ContainsKey("location"))
                     {
@@ -738,16 +743,11 @@ namespace XenAdmin.Actions
                     MacInfo = Messages.HYPHEN;
                 foreach (XenRef<VBD> vbdRef in vm.VBDs)
                 {
-                    string device = VBD.get_device(Connection.Session, vbdRef);
-                    if (device == "")
+                    var vbd = vm.Connection.Resolve(vbdRef);
+                    if (vbd != null && !vbd.IsCDROM && !vbd.IsFloppyDrive && vbd.bootable)
                     {
-                        device = "unknown";
-                    }
-                    XenRef<VDI> vdiRef = VBD.get_VDI(Connection.Session, vbdRef);
-                    if (vdiRef != null && !string.IsNullOrEmpty(vdiRef.opaque_ref) && !(vdiRef.opaque_ref.ToLower().Contains("null")))
-                    {
-                        VDI lVdi = VDI.get_record(Connection.Session, vdiRef);
-                        srInfo += lVdi.name_label + ":" + device + ":" + lVdi.SizeText + "\n";
+                        VDI vdi = vm.Connection.Resolve(vbd.VDI);
+                        srInfo += vdi.name_label + ":" + vbd.Name + ":" + vdi.SizeText + ";";
                     }
                 }
                 if (srInfo.Length == 0)
@@ -755,7 +755,7 @@ namespace XenAdmin.Actions
                 
                 if (vm.resident_on != null && !string.IsNullOrEmpty(vm.resident_on.opaque_ref) && !(vm.resident_on.opaque_ref.ToLower().Contains("null")))
                 {
-                    host_name = Host.get_name_label(Connection.Session, vm.resident_on);
+                    host_name = vm.Connection.Resolve(vm.resident_on).Name;
                 }
                 else //if there is no host, use pool replace the host
                 {
@@ -802,28 +802,18 @@ namespace XenAdmin.Actions
             CanCancel = true;
         }
 
-        private void DoExport()
+        private void export2XLS()
         {
             Warning[] warnings;
             string[] streamIds;
             string mimeType = string.Empty;
             string encoding = string.Empty;
             string extension = string.Empty;
-            CanCancel = true;
             FileStream fs = null;
-            if (Cancelling)
-                throw new CancelledException();
-            // Setup the report viewer object and get the array of bytes
-            
             ReportViewer viewer = new ReportViewer();
             viewer.ProcessingMode = ProcessingMode.Local;
             viewer.LocalReport.ReportPath = "resource_tatistic_report.rdlc";
-            PercentComplete = 0;
-            ComposeHostData();
-            ComposeNetworkData();
-            ComposeSRData();
-            ComposeVMData();
-            ComposeGPUData();
+
             ReportDataSource rds1 = new ReportDataSource("Report_HostInfo", m_Hosts);
             ReportDataSource rds2 = new ReportDataSource("Report_NetworkInfo", m_Networks);
             ReportDataSource rds3 = new ReportDataSource("Report_SRInfo", m_SRs);
@@ -836,7 +826,7 @@ namespace XenAdmin.Actions
             viewer.LocalReport.DataSources.Add(rds5);
             ComposeParameters(viewer, Connection);
             byte[] bytes = viewer.LocalReport.Render("Excel", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
-               
+
             try
             {
                 fs = new FileStream(_filename, FileMode.Create);
@@ -851,6 +841,252 @@ namespace XenAdmin.Actions
                 PercentComplete = 100;
                 if (fs != null)
                     fs.Close();
+                try
+                {
+                    Process xlProcess = Process.Start(_filename);
+                    /*ProcessStartInfo startInfo = new ProcessStartInfo(excel, _filename);
+                    startInfo.FileName = "EXCEL.EXE";
+                    startInfo.Arguments = _filename;
+                    Process.Start(startInfo);*/
+                }
+                catch (Exception ex)
+                {
+                    log.Debug(ex, ex);
+                }
+            }
+        }
+
+        private void ComposeCSVRow(ref FileStream fs, ref List<string> items)
+        {
+            StringBuilder builder = new StringBuilder();
+            bool firstColumn = true;
+            byte[] info;
+            foreach (string value in items)
+            {
+                // Add separator if this isn't the first value
+                if (!firstColumn)
+                    builder.Append(',');
+                if (value.IndexOfAny(new char[] { '"', ',' }) != -1)
+                    builder.AppendFormat("\"{0}\"", value.Replace("\"", "\"\""));
+                else
+                    builder.Append(value);
+                firstColumn = false;
+            }
+            info = new UTF8Encoding(true).GetBytes(builder.ToString() + "\n");
+            fs.Write(info, 0, info.Length);
+            items.Clear();
+        }
+
+        private void HostInfoCSVMaker(ref FileStream fs)
+        {
+            List<string> items = new List<string>();
+            items.Add("\n");
+            ComposeCSVRow(ref fs, ref items);
+
+            items.Add(Messages.SERVER);
+            ComposeCSVRow(ref fs, ref items);
+
+            items.Add(Messages.NAME);
+            items.Add("UUID");
+            items.Add(Messages.POOL_MASTER);
+            items.Add(Messages.ADDRESS);
+            items.Add(Messages.OVERVIEW_CPU_USAGE);
+            items.Add(Messages.OVERVIEW_MEMORY_USAGE);
+            items.Add(Messages.OVERVIEW_NETWORK + Messages.OVERVIEW_UNITS);
+            items.Add(Messages.UPTIME);
+            ComposeCSVRow(ref fs, ref items);
+
+            foreach (HostInfo host in m_Hosts)
+            {
+                items.Add(host.Name);
+                items.Add(host.UUID);
+                items.Add(host.Role);
+                items.Add(host.Address);
+                items.Add(host.CpuUsage);
+                items.Add(host.MemUsage);
+                items.Add(host.NetworkUsage);
+                items.Add(host.Uptime);
+                ComposeCSVRow(ref fs, ref items);
+            }
+        }
+
+        private void NetworkInfoCSVMaker(ref FileStream fs)
+        {
+            List<string> items = new List<string>();
+            items.Add("\n");
+            ComposeCSVRow(ref fs, ref items);
+            items.Add(Messages.NETWORKS);
+            ComposeCSVRow(ref fs, ref items);
+
+            items.Add(Messages.NAME);
+            items.Add(Messages.LINK_STATUS);
+            items.Add(Messages.MAC);
+            items.Add("MTU");
+            items.Add("VLAN");
+            ComposeCSVRow(ref fs, ref items);
+
+            foreach (NetworkInfo network in m_Networks)
+            {
+                items.Add(network.Name);
+                items.Add(network.LinkStatus);
+                items.Add(network.MAC);
+                items.Add(network.MTU);
+                items.Add(network.VlanID);
+                ComposeCSVRow(ref fs, ref items);
+            }
+        }
+
+        private void SRInfoCSVMaker(ref FileStream fs)
+        {
+            List<string> items = new List<string>();
+            items.Add("\n");
+            ComposeCSVRow(ref fs, ref items);
+            items.Add(Messages.DATATYPE_STORAGE);
+            ComposeCSVRow(ref fs, ref items);
+
+            items.Add(Messages.NAME);
+            items.Add("UUID");
+            items.Add(Messages.STORAGE_TYPE);
+            items.Add(Messages.SIZE);
+            items.Add(Messages.NEWSR_LOCATION);
+            items.Add(Messages.DESCRIPTION);
+            ComposeCSVRow(ref fs, ref items);
+
+            foreach (SRInfo sr in m_SRs)
+            {
+                items.Add(sr.Name);
+                items.Add(sr.UUID);
+                items.Add(sr.Type);
+                items.Add(sr.Size);
+                items.Add(sr.Remark);
+                items.Add(sr.Description);
+                ComposeCSVRow(ref fs, ref items);
+            }
+        }
+
+        private void PGPUInfoCSVMaker(ref FileStream fs)
+        {
+            List<string> items = new List<string>();
+            items.Add("\n");
+            ComposeCSVRow(ref fs, ref items);
+            items.Add(Messages.GPU);
+            ComposeCSVRow(ref fs, ref items);
+
+            items.Add(Messages.NAME);
+            items.Add("UUID");
+            items.Add(Messages.BUS_PATH);
+            items.Add(Messages.SERVER);
+            items.Add(Messages.OVERVIEW_MEMORY_USAGE);
+            items.Add(Messages.POWER_STATE);
+            items.Add("Temperature");
+            items.Add("Utilization");
+            ComposeCSVRow(ref fs, ref items);
+
+            foreach (PGPUInfo pGpu in m_PGUPs)
+            {
+                items.Add(pGpu.Name);
+                items.Add(pGpu.UUID);
+                items.Add(pGpu.BusAddress);
+                items.Add(pGpu.Host);
+                items.Add(pGpu.MemoryUtilization);
+                items.Add(pGpu.PowerStatus);
+                items.Add(pGpu.Temperature);
+                items.Add(pGpu.Utilization);
+                ComposeCSVRow(ref fs, ref items);
+            }
+        }
+
+        private void VMInfoCSVMaker(ref FileStream fs)
+        {
+            List<string> items = new List<string>();
+            items.Add("\n");
+            ComposeCSVRow(ref fs, ref items);
+            items.Add(Messages.VMS);
+            ComposeCSVRow(ref fs, ref items);
+
+            items.Add(Messages.NAME);
+            items.Add("UUID");
+            items.Add(Messages.SERVER + "/" + Messages.POOL);
+            items.Add(Messages.ADDRESS);
+            items.Add(Messages.MAC);
+            items.Add(Messages.NIC);
+            items.Add(Messages.OVERVIEW_MEMORY_USAGE);
+            items.Add(Messages.OPERATING_SYSTEM);
+            items.Add(Messages.POWER_STATE);
+            items.Add(Messages.STORAGE_DISK);
+            items.Add(Messages.TEMPLATE);
+            items.Add(Messages.OVERVIEW_CPU_USAGE);
+            items.Add(Messages.UPTIME);
+            ComposeCSVRow(ref fs, ref items);
+
+            foreach (VMInfo vm in m_VMs)
+            {
+                items.Add(vm.Name);
+                items.Add(vm.UUID);
+                items.Add(vm.HostInfo);
+                items.Add(vm.IP);
+                items.Add(vm.MAC);
+                items.Add(vm.NicNum);
+                items.Add(vm.MemSize);
+                items.Add(vm.OSInfo);
+                items.Add(vm.PowerStatus);
+                items.Add(vm.SRInfo);
+                items.Add(vm.TemplateName);
+                items.Add(vm.VCpuNum);
+                items.Add(vm.Uptime);
+                ComposeCSVRow(ref fs, ref items);
+            }
+        }
+
+        private void export2CSV()
+        {
+            FileStream fs = null;
+            try
+            {
+                List<string> items = new List<string>();
+
+                fs = new FileStream(_filename, FileMode.Create);
+                //pool information part
+                items.Add(Messages.POOL + ":" + Connection.Cache.Pools[0].Name);
+                ComposeCSVRow(ref fs, ref items);
+                items.Add("UUID:" + Connection.Cache.Pools[0].uuid);
+                ComposeCSVRow(ref fs, ref items);
+                //server information
+                HostInfoCSVMaker(ref fs);
+                NetworkInfoCSVMaker(ref fs);
+                SRInfoCSVMaker(ref fs);
+                PGPUInfoCSVMaker(ref fs);
+                VMInfoCSVMaker(ref fs);
+            }
+            catch (Exception ex)
+            {
+                log.Debug(ex, ex);
+            }
+            finally
+            {
+                PercentComplete = 100;
+                if (fs != null)
+                    fs.Close();
+            }
+        }
+
+        private void DoExport()
+        {
+            CanCancel = true;
+            PercentComplete = 0;
+            ComposeHostData();
+            ComposeNetworkData();
+            ComposeSRData();
+            ComposeVMData();
+            ComposeGPUData();
+
+            if (_fileType == Convert.ToInt32(FILE_TYPE_INDEX.XLS))
+            {
+                export2XLS();
+            }
+            else
+            {
+                export2CSV();
             }
         }
     }
