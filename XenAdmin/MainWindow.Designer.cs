@@ -141,6 +141,7 @@ namespace XenAdmin
             this.removeServerToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.poolReconnectAsToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.disconnectPoolToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
+            this.exportResourceReportPoolToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.virtualAppliancesToolStripMenuItem = new XenAdmin.Commands.CommandToolStripMenuItem();
             this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
@@ -826,6 +827,7 @@ namespace XenAdmin
             this.removeServerToolStripMenuItem,
             this.poolReconnectAsToolStripMenuItem,
             this.disconnectPoolToolStripMenuItem,
+            this.exportResourceReportPoolToolStripMenuItem,
             this.toolStripSeparator27,
             this.virtualAppliancesToolStripMenuItem,
             this.toolStripSeparator30,
@@ -878,6 +880,12 @@ namespace XenAdmin
             this.disconnectPoolToolStripMenuItem.Command = new XenAdmin.Commands.DisconnectPoolCommand();
             this.disconnectPoolToolStripMenuItem.Name = "disconnectPoolToolStripMenuItem";
             resources.ApplyResources(this.disconnectPoolToolStripMenuItem, "disconnectPoolToolStripMenuItem");
+            // 
+            // exportResourceListoolToolStripMenuItem
+            // 
+            this.exportResourceReportPoolToolStripMenuItem.Command = new XenAdmin.Commands.ExportResourceReportCommand();
+            this.exportResourceReportPoolToolStripMenuItem.Name = "exportResourceReportPoolToolStripMenuItem";
+            resources.ApplyResources(this.exportResourceReportPoolToolStripMenuItem, "exportResourceReportPoolToolStripMenuItem");
             // 
             // toolStripSeparator27
             // 
@@ -1860,6 +1868,7 @@ namespace XenAdmin
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private CommandToolStripMenuItem deleteToolStripMenuItem;
         private CommandToolStripMenuItem disconnectPoolToolStripMenuItem;
+        private CommandToolStripMenuItem exportResourceReportPoolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HostMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
         private CommandToolStripMenuItem ServerPropertiesToolStripMenuItem;

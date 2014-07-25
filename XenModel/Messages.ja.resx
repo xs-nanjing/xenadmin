@@ -11793,4 +11793,16 @@ StorageLink Gateway を使用する VM の XenServer 6.0 へのアップグレ�
   <data name="YOU_ARE_HERE" xml:space="preserve">
     <value>現在の位置</value>
   </data>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_NAME" xml:space="preserve">
+    <value>Exporting {0} resource list</value>
+  </data>
+  <data name="ACTION_EXPORT_POOL_RESOURCE_LIST_TASK_DESCRIPTION" xml:space="preserve">
+    <value>Exporting {0} resource list to file {1}</value>
+  </data>
+  <data name="ACTION_EXPORT_RESOURCE_LIST_FROM_X" xml:space="preserve">
+    <value>Exporting resource list from '{0}'</value>
+  </data>
+  <data name="MAINWINDOW_EXPORT_POOL_RESOURCE_LIST" xml:space="preserve">
+    <value>Export resource list</value>
+  </data>
 </root>

@@ -105,6 +105,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\GUIActions\ExportResourceReportAction.cs" />
     <Compile Include="Actions\GUIActions\DeleteAllAlertsAction.cs" />
     <Compile Include="Actions\GUIActions\ExternalPluginAction.cs" />
     <Compile Include="Actions\GUIActions\MeddlingAction.cs" />
@@ -125,6 +126,7 @@
     </Compile>
     <Compile Include="Commands\CrossPoolMigrateToHomeCommand.cs" />
     <Compile Include="Commands\TrimSRCommand.cs" />
+    <Compile Include="Commands\ExportResourceReportCommand.cs" />
     <Compile Include="Controls\AffinityPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
