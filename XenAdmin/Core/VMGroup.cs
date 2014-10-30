@@ -178,7 +178,7 @@ namespace XenAdmin.Core
 
         internal static bool FeaturePossible(IXenConnection connection)
         {
-            if (typeof(T) == typeof(VMPP) && Helpers.ClearwaterOrGreater(connection))
+            if (typeof(T) == typeof(VMPP) && Helpers.IsClearwater(connection))
                 return false;
 
             return typeof(T) == typeof(VMPP) ?

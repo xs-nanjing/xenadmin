@@ -291,7 +291,7 @@ namespace XenAdmin.Dialogs.VMProtection_Recovery
 
         private void SetupDeprecationBanner()
         {
-            if(deprecationBanner != null && !Helpers.ClearwaterOrGreater(Pool.Connection))
+            if(deprecationBanner != null && !Helpers.IsClearwater(Pool.Connection))
             {
                 deprecationBanner.AppliesToVersion = Messages.XENSERVER_6_2;
                 deprecationBanner.BannerType = DeprecationBanner.Type.Removal;

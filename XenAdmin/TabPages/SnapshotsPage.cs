@@ -183,7 +183,7 @@ namespace XenAdmin.TabPages
 
         private void RefreshArchiveNowOption()
         {
-            if(Helpers.ClearwaterOrGreater(VM.Connection))
+            if(Helpers.IsClearwater(VM.Connection))
             {
                 archiveSnapshotNowToolStripMenuItem.Enabled = archiveSnapshotNowToolStripMenuItem.Visible = false;
                 archiveToolStripMenuItem.Enabled = archiveToolStripMenuItem.Visible = false;
@@ -197,7 +197,7 @@ namespace XenAdmin.TabPages
 
         private void RefreshVMProtectionPanel()
         {
-            if (Helpers.CowleyOrGreater(VM.Connection) && Registry.VMPRFeatureEnabled && !Helpers.ClearwaterOrGreater(VM.Connection))
+            if (Helpers.CowleyOrGreater(VM.Connection) && Registry.VMPRFeatureEnabled && !Helpers.IsClearwater(VM.Connection))
             {
                 panelVMPP.Visible = true;
                 var vmpp = VM.Connection.Resolve(VM.protection_policy);

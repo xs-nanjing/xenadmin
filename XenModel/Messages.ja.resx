@@ -11778,6 +11778,9 @@ StorageLink Gateway を使用する VM の XenServer 6.0 へのアップグレ�
   <data name="X_IS_REMOVED_IN_X" xml:space="preserve">
     <value>{0} 機能は {1} で使用できません</value>
   </data>
+  <data name="X_IS_REMOVED_IN_X_ONLY" xml:space="preserve">
+    <value>The {0} feature is not available in {1} only</value>
+  </data>
   <data name="X_WITH_WARNING_X" xml:space="preserve">
     <value>{0} 警告: {1}</value>
   </data>

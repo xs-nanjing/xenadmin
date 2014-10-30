@@ -104,7 +104,10 @@ namespace XenAdmin.Controls
             
             if (BannerType == Type.Removal)
             {
-                message.Text = String.Format(Messages.X_IS_REMOVED_IN_X, FeatureName, AppliesToVersion);
+                if (FeatureName == Messages.VMPP)
+                    message.Text = String.Format(Messages.X_IS_REMOVED_IN_X_ONLY, FeatureName, AppliesToVersion);
+                else
+                    message.Text = String.Format(Messages.X_IS_REMOVED_IN_X, FeatureName, AppliesToVersion);
                 return;
             } 
             

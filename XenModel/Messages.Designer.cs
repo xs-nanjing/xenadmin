@@ -13741,15 +13741,6 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning: enable maximum audit trail log needs more disk space and memory on WLB Server!.
-        /// </summary>
-        public static string MAXIMUM_AUDIT_LOG_WARN_MSG {
-            get {
-                return ResourceManager.GetString("MAXIMUM_AUDIT_LOG_WARN_MSG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Full Name.
         /// </summary>
         public static string FULL_NAME {
@@ -19275,6 +19266,15 @@ namespace XenAdmin {
         public static string MAX_BRACKETS {
             get {
                 return ResourceManager.GetString("MAX_BRACKETS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Enabling maximum audit trail log would occupy more disk space and memory on WLB Server!.
+        /// </summary>
+        public static string MAXIMUM_AUDIT_LOG_WARN_MSG {
+            get {
+                return ResourceManager.GetString("MAXIMUM_AUDIT_LOG_WARN_MSG", resourceCulture);
             }
         }
         
@@ -26725,7 +26725,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos;: VM Protection Policies were removed in XenServer 6.2.
+        ///   Looks up a localized string similar to &apos;{0}&apos;: VM Protection Policies were removed in XenServer 6.2 only.
         /// </summary>
         public static string RPU_WIZARD_VMPR_VMPP_DEPRECATION {
             get {
@@ -26739,6 +26739,15 @@ namespace XenAdmin {
         public static string RPU_WIZARD_WSS_DEPRECATED {
             get {
                 return ResourceManager.GetString("RPU_WIZARD_WSS_DEPRECATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;More.
+        /// </summary>
+        public static string RUN_MORE_REPORT {
+            get {
+                return ResourceManager.GetString("RUN_MORE_REPORT", resourceCulture);
             }
         }
         
@@ -26766,6 +26775,15 @@ namespace XenAdmin {
         public static string RUN_PRECHECKS_WITH_ACCESS_KEY {
             get {
                 return ResourceManager.GetString("RUN_PRECHECKS_WITH_ACCESS_KEY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Run Report.
+        /// </summary>
+        public static string RUN_REPORT {
+            get {
+                return ResourceManager.GetString("RUN_REPORT", resourceCulture);
             }
         }
         
@@ -33011,20 +33029,20 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minimum.
-        /// </summary>
-        public static string WLB_AUDIT_LOG_MINIMUM {
-            get {
-                return ResourceManager.GetString("WLB_AUDIT_LOG_MINIMUM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Maximum.
         /// </summary>
         public static string WLB_AUDIT_LOG_MAXIMUM {
             get {
                 return ResourceManager.GetString("WLB_AUDIT_LOG_MAXIMUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum.
+        /// </summary>
+        public static string WLB_AUDIT_LOG_MINIMUM {
+            get {
+                return ResourceManager.GetString("WLB_AUDIT_LOG_MINIMUM", resourceCulture);
             }
         }
         
@@ -33505,6 +33523,15 @@ namespace XenAdmin {
         public static string WLB_METRIC_WEIGHTING_SUBTEXT {
             get {
                 return ResourceManager.GetString("WLB_METRIC_WEIGHTING_SUBTEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click &quot;More&quot; for more report contents.
+        /// </summary>
+        public static string WLB_MORE_REPORT_BANNER {
+            get {
+                return ResourceManager.GetString("WLB_MORE_REPORT_BANNER", resourceCulture);
             }
         }
         
@@ -34971,6 +34998,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} feature is not available in {1} only.
+        /// </summary>
+        public static string X_IS_REMOVED_IN_X_ONLY {
+            get {
+                return ResourceManager.GetString("X_IS_REMOVED_IN_X_ONLY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} with warning: {1}.
         /// </summary>
         public static string X_WITH_WARNING_X {
@@ -35221,33 +35257,6 @@ namespace XenAdmin {
         public static string YOU_ARE_HERE {
             get {
                 return ResourceManager.GetString("YOU_ARE_HERE", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to run report.
-        /// </summary>
-        public static string RUN_REPORT {
-            get {
-                return ResourceManager.GetString("RUN_REPORT", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to run more report.
-        /// </summary>
-        public static string RUN_MORE_REPORT {
-            get {
-                return ResourceManager.GetString("RUN_MORE_REPORT", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Click "More" for more report contents.
-        /// </summary>
-        public static string WLB_MORE_REPORT_BANNER {
-            get {
-                return ResourceManager.GetString("WLB_MORE_REPORT_BANNER", resourceCulture);
             }
         }
     }

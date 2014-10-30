@@ -90,7 +90,7 @@ namespace XenAdmin.Commands
 
         protected override bool CanExecuteCore(SelectedItemCollection selection)
         {
-            if(typeof(T) == typeof(VMPP) && selection.Any(s=>Helpers.ClearwaterOrGreater(s.Connection)))
+            if(typeof(T) == typeof(VMPP) && selection.Any(s=>Helpers.IsClearwater(s.Connection)))
                 return false;
 
             return selection.FirstAsXenObject != null && selection.FirstAsXenObject.Connection != null && selection.FirstAsXenObject.Connection.IsConnected

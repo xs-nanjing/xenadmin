@@ -9287,7 +9287,7 @@ Upgrading VMs using StorageLink Gateway to XenServer 6.0 is only supported if th
     <value>Checking licensing status</value>
   </data>
   <data name="RPU_WIZARD_VMPR_VMPP_DEPRECATION" xml:space="preserve">
-    <value>'{0}': VM Protection Policies were removed in XenServer 6.2</value>
+    <value>'{0}': VM Protection Policies were removed in XenServer 6.2 only</value>
   </data>
   <data name="RPU_WIZARD_WSS_DEPRECATED" xml:space="preserve">
     <value>'{0}': The use of WSS servers was removed in XenServer 6.2</value>
@@ -12142,6 +12142,9 @@ You will need to navigate to the Console on each of the selected VMs to complete
   </data>
   <data name="X_IS_REMOVED_IN_X" xml:space="preserve">
     <value>The {0} feature is not available in {1} and later versions</value>
+  </data>
+  <data name="X_IS_REMOVED_IN_X_ONLY" xml:space="preserve">
+    <value>The {0} feature is not available in {1} only</value>
   </data>
   <data name="X_WITH_WARNING_X" xml:space="preserve">
     <value>{0} with warning: {1}</value>

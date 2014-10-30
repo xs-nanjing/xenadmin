@@ -9037,7 +9037,7 @@ XenServer 可以重新启动服务器并将其 CPU 降至主服务器的级别�
     <value>正在检查许可状态</value>
   </data>
   <data name="RPU_WIZARD_VMPR_VMPP_DEPRECATION" xml:space="preserve">
-    <value>{0}: 已在 XenServer 6.2 中删除 VM 保护策略</value>
+    <value>{0}: 仅在 XenServer 6.2 中删除 VM 保护策略</value>
   </data>
   <data name="RPU_WIZARD_WSS_DEPRECATED" xml:space="preserve">
     <value>{0}: 已在 XenServer 6.2 中删除对 WSS 服务器的使用</value>
@@ -11791,6 +11791,9 @@ XenServer 可以重新启动服务器并将其 CPU 降至主服务器的级别�
   </data>
   <data name="X_IS_REMOVED_IN_X" xml:space="preserve">
     <value>“{0}”功能在 {1} 中不提供</value>
+  </data>
+  <data name="X_IS_REMOVED_IN_X_ONLY" xml:space="preserve">
+    <value>“{0}”功能仅在 {1} 中不提供</value>
   </data>
   <data name="X_WITH_WARNING_X" xml:space="preserve">
     <value>{0}，警告: {1}</value>
